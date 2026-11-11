@@ -1,0 +1,14 @@
+{
+  "kind": "Short STOP / pending RUN / stable-release rearm; AVR execution, not board measurement",
+  "folder": "Firmware\\build\\release",
+  "state": 0,
+  "fault": 0,
+  "observedStackBytes": 149,
+  "status": "PASS",
+  "clockHz": 8000000,
+  "encoderMode": 4,
+  "countsPerRev": 0,
+  "elfSha256": "13d2baf35352afdaf346f9ec95de0f59d3d9e87119c046e9cf237ffd98baef96",
+  "binarySha256": "06c8f057c7a84a462c3f701b2713a63fc94950bb3cab78c41b6a0c772a127cad",
+  "recordedAtUtc": "2026-11-11T03:35:06.263Z"
+}

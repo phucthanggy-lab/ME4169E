@@ -1,0 +1,2 @@
+# Preserve source and release bytes used by SHA256 manifests.
+* -text

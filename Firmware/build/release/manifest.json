@@ -1,0 +1,151 @@
+{
+    "motorOutputsLocked":  false,
+    "finishedAtUtc":  "2026-11-11T03:39:50.4961305Z",
+    "version":  "ME4169E-0.2.1",
+    "sourceFiles":  [
+                        {
+                            "sha256":  "fd613cbed8e2db1c329aa0b0e293ac91c27c5e45d78f0cf09e9e5b57fdfc003d",
+                            "path":  "Firmware/build.ps1"
+                        },
+                        {
+                            "sha256":  "95774ad3dd4f4e3936012a109feb40edc3b08fba1943a90ecbd75ada08424d04",
+                            "path":  "Firmware/include/adc.h"
+                        },
+                        {
+                            "sha256":  "ef27118991194d5ea59ff0ee13cca785a783d3101d9bc93debae5d1339997791",
+                            "path":  "Firmware/include/config.h"
+                        },
+                        {
+                            "sha256":  "0e31c877c7730455c13f94d4dace58af132b2ae37da610aa9eead46c263c4a8c",
+                            "path":  "Firmware/include/control.h"
+                        },
+                        {
+                            "sha256":  "63d40005c91bdfcba0d1e2eb5391f9db7c98f7c142e2399a169abbc74d947f5e",
+                            "path":  "Firmware/include/encoder.h"
+                        },
+                        {
+                            "sha256":  "1ddd2df9b83c7cecd7d9a68c11d9aa0487d94c5318e8a70e0fe8307738b68012",
+                            "path":  "Firmware/include/gpio.h"
+                        },
+                        {
+                            "sha256":  "7b226b523b1a28d79e31db0f449fee0c9d35d8069794b8cfc779afc212ab26c8",
+                            "path":  "Firmware/include/lcd.h"
+                        },
+                        {
+                            "sha256":  "8955069cbe3507af373892907b8efda558ac88432412dc134060a8a2443dbf51",
+                            "path":  "Firmware/include/motor.h"
+                        },
+                        {
+                            "sha256":  "c4a0e3c2c5d85f44871e1e738b1c2a54dad467e58aad762ec677ffb400678e77",
+                            "path":  "Firmware/include/pwm.h"
+                        },
+                        {
+                            "sha256":  "f7a5b06a28b22b11a79203e7c1e6a909b292cd299033ba770b81b2abc60c27fb",
+                            "path":  "Firmware/include/timer.h"
+                        },
+                        {
+                            "sha256":  "59ad18c07d82568969ab2210317ec258dec910cb5e1abc4c129ba79b5d3c7c86",
+                            "path":  "Firmware/Makefile"
+                        },
+                        {
+                            "sha256":  "9881edaa696b5e75fb27c99228505457887bc62ce3f9cb93bb953a18aa03fc69",
+                            "path":  "Firmware/src/adc.c"
+                        },
+                        {
+                            "sha256":  "5abb32314573b04c48599d2473be372f4a69b088dca60f6eda29a73c2cd7632b",
+                            "path":  "Firmware/src/control.c"
+                        },
+                        {
+                            "sha256":  "43233d369de8c8b6d5d04979b962768e14d06918151a761e36b3a77d9ac38d5a",
+                            "path":  "Firmware/src/encoder.c"
+                        },
+                        {
+                            "sha256":  "d3684451c7ac18085ec3eda21aa4f7978bd0d78753c2b90e83bf4c99ab4a1bca",
+                            "path":  "Firmware/src/gpio.c"
+                        },
+                        {
+                            "sha256":  "d1fd1f01d8671439ae4bf7fff58381f8a1ce436f611e181f444876da2fe5af89",
+                            "path":  "Firmware/src/lcd.c"
+                        },
+                        {
+                            "sha256":  "600c96edead9bcbfda9553a2266a902794c7bb75f69de737fd13a8deccda0e89",
+                            "path":  "Firmware/src/main.c"
+                        },
+                        {
+                            "sha256":  "d1a821fe062d6daf20fafff36ea2da6c1e544c8920720d870567accbb0f97875",
+                            "path":  "Firmware/src/motor.c"
+                        },
+                        {
+                            "sha256":  "770da6967e976b5096d58f867ee10e4c75cc69d90442a3f3e40f252328cd7d3f",
+                            "path":  "Firmware/src/pwm.c"
+                        },
+                        {
+                            "sha256":  "76a175c5c6b9f1bbd70aca5159a855f01a24e350bda9a43048ca123bfaea3fde",
+                            "path":  "Firmware/src/timer.c"
+                        },
+                        {
+                            "sha256":  "9fa5e8b8e0ae531f090828fdeb1896458e61536474af0315c31c0ddb37f2eb8f",
+                            "path":  "Firmware/tools/config-probe.c"
+                        },
+                        {
+                            "sha256":  "1d1d0522b85e0b2d314b1ab1dabd70e465b1b7e35ea44e4396c801c6cc134d91",
+                            "path":  "Firmware/tools/install-toolchain.ps1"
+                        },
+                        {
+                            "sha256":  "ebe4576cfe1caf4c27a72736b5f4bf0f749e01ec054c789f5aa9c8e69e303159",
+                            "path":  "Firmware/tools/package-submission.ps1"
+                        }
+                    ],
+    "flashLimit":  8192,
+    "flashBytes":  7052,
+    "artifacts":  {
+                      "firmware.map":  "2e3067e3322c4f980b82104522f84952236862ace59fd8f3f4112b7140508751",
+                      "firmware.bin":  "06c8f057c7a84a462c3f701b2713a63fc94950bb3cab78c41b6a0c772a127cad",
+                      "firmware.elf":  "13d2baf35352afdaf346f9ec95de0f59d3d9e87119c046e9cf237ffd98baef96",
+                      "firmware.hex":  "d6a213be137bc113645660be007a98c69d09e6007f6bfc3c8475b2036cfb82f6"
+                  },
+    "staticSramBytes":  238,
+    "clockHz":  8000000,
+    "mcuTarget":  "atmega8",
+    "mcuConfirmationDeclared":  true,
+    "profile":  "Release",
+    "effectiveConfiguration":  {
+                                   "MCU_CONFIRMED":  1,
+                                   "SUPPLY_MV":  12000,
+                                   "OUTPUTS":  1,
+                                   "ENCODER_REVERSED":  0,
+                                   "DUTY_LIMIT":  1000,
+                                   "CLOCK_CONFIRMED":  1,
+                                   "ENCODER_CPR":  0,
+                                   "CLOCK_HZ":  8000000,
+                                   "ENCODER_MODE":  4,
+                                   "PWM_HZ":  10000,
+                                   "RESET_TEST_CONFIRMED":  0
+                               },
+    "startedAtUtc":  "2026-11-11T03:39:48.6327800Z",
+    "compiler":  "avr-gcc.exe (GCC) 7.3.0",
+    "sramLimit":  1024,
+    "compileFlags":  [
+                         "-mmcu=atmega8",
+                         "-std=gnu11",
+                         "-Os",
+                         "-g",
+                         "-Wall",
+                         "-Wextra",
+                         "-Werror",
+                         "-Wshadow",
+                         "-Wundef",
+                         "-Wstrict-prototypes",
+                         "-Wmissing-prototypes",
+                         "-Wformat=2",
+                         "-ffunction-sections",
+                         "-fdata-sections",
+                         "-I",
+                         "Firmware/include",
+                         "-DFW_PROFILE=2",
+                         "-DCFG_ENCODER_MODE=4U"
+                     ],
+    "syntheticSelfTest":  false,
+    "syntheticApplication":  false,
+    "clockConfirmed":  true
+}

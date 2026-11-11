@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "kind": "Intel HEX checksum/address/payload/ELF regeneration and source/artifact hash verification",
+  "records": 443,
+  "payloadBytes": 7052,
+  "hexSha256": "d6a213be137bc113645660be007a98c69d09e6007f6bfc3c8475b2036cfb82f6",
+  "elfSha256": "13d2baf35352afdaf346f9ec95de0f59d3d9e87119c046e9cf237ffd98baef96",
+  "sourceFilesVerified": 23,
+  "checkedAtUtc": "2026-11-11T03:35:04.562Z"
+}

@@ -1,0 +1,16 @@
+{
+  "kind": "Continuous 12k counted edges/s and overflow register stimulus; AVR model, not physical edge-rate qualification",
+  "folder": "Firmware\\build\\release",
+  "edgesPerSecond": 12000,
+  "edgesPerBurst": 3000,
+  "bursts": 2,
+  "faultAfterOverflow": 3,
+  "observedStackBytes": 188,
+  "status": "PASS",
+  "clockHz": 8000000,
+  "encoderMode": 4,
+  "countsPerRev": 0,
+  "elfSha256": "13d2baf35352afdaf346f9ec95de0f59d3d9e87119c046e9cf237ffd98baef96",
+  "binarySha256": "06c8f057c7a84a462c3f701b2713a63fc94950bb3cab78c41b6a0c772a127cad",
+  "recordedAtUtc": "2026-11-11T03:35:07.661Z"
+}

@@ -1,0 +1,20 @@
+.worktrees/
+.orchestration/
+.tools/
+.build/
+.development/
+ME4169E.zip
+.agent-context/
+node_modules/
+.venv/
+.env
+.env.*
+!.env.example
+*.log
+
+# Local references and generated development output
+Input/Datasheets/
+Firmware/build/*
+!Firmware/build/release/
+!Firmware/build/release-hall/
+Firmware/build/**/*.lst
