@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "name": "ATmega8 Release A-B",
+      "compilerPath": "${workspaceFolder}/.tools/avr/avr/bin/avr-gcc.exe",
+      "compilerArgs": ["-mmcu=atmega8"],
+      "includePath": [
+        "${workspaceFolder}/Firmware/include",
+        "${workspaceFolder}/.tools/avr/avr/avr/include",
+        "${workspaceFolder}/.tools/avr/avr/lib/gcc/avr/7.3.0/include"
+      ],
+      "defines": ["__AVR_ATmega8__", "FW_PROFILE=2", "CFG_ENCODER_MODE=4U"],
+      "cStandard": "gnu11",
+      "cppStandard": "gnu++11",
+      "intelliSenseMode": "windows-gcc-x86"
+    },
+    {
+      "name": "ATmega8 Release Hall",
+      "compilerPath": "${workspaceFolder}/.tools/avr/avr/bin/avr-gcc.exe",
+      "compilerArgs": ["-mmcu=atmega8"],
+      "includePath": [
+        "${workspaceFolder}/Firmware/include",
+        "${workspaceFolder}/.tools/avr/avr/avr/include",
+        "${workspaceFolder}/.tools/avr/avr/lib/gcc/avr/7.3.0/include"
+      ],
+      "defines": ["__AVR_ATmega8__", "FW_PROFILE=2", "CFG_ENCODER_MODE=1U"],
+      "cStandard": "gnu11",
+      "cppStandard": "gnu++11",
+      "intelliSenseMode": "windows-gcc-x86"
+    }
+  ],
+  "version": 4
+}

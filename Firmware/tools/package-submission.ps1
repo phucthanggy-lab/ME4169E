@@ -33,7 +33,7 @@ foreach ($name in @('firmware.hex','firmware.elf','firmware.bin','firmware.map')
     if (-not $hash) { throw "Build manifest missing artifact: $name" }
     $files[$buildRelative + '/' + $name] = $hash
 }
-foreach ($relative in @('README.md','ME4169E.code-workspace',($buildRelative + '/manifest.json'))) {
+foreach ($relative in @('README.md','ME4169E.code-workspace','.vscode/c_cpp_properties.json','.vscode/tasks.json','.vscode/extensions.json',($buildRelative + '/manifest.json'))) {
     $files[$relative] = (Get-FileHash -LiteralPath (Join-Path $root $relative) -Algorithm SHA256).Hash.ToLowerInvariant()
 }
 $hallRelative = 'Firmware/build/release-hall'

@@ -16,6 +16,7 @@ Xem [đấu dây L298, lựa chọn encoder và hiệu chuẩn](Input/Motor_KDE3
 ME4169E/
 ├── README.md                 Nguyên lý, ngoại vi và cách sử dụng
 ├── ME4169E.code-workspace     Workspace VS Code mang tên ME4169E
+├── .vscode/                  Cấu hình AVR IntelliSense và tác vụ build
 ├── Firmware/
 │   ├── include/              Header và cấu hình tập trung trong config.h
 │   ├── src/                  Chương trình C theo từng chức năng
@@ -124,7 +125,7 @@ ICSP trên ảnh có thứ tự: **1 MISO, 2 +5 V, 3 SCK, 4 MOSI, 5 RESET, 6 GND
 
 Không phát hiện lệch chân giữa mã hiện tại và các net tín hiệu trong ảnh. Đối chiếu ảnh không thay thế kiểm netlist, symbol-to-pad và thông mạch PCB vì chưa có file thiết kế hiện hành.
 
-**Điểm phần cứng cần xử lý trước cấp nguồn:** ký hiệu 78M05 trong ảnh ghi IN=1, OUT=2, GND=3. Sơ đồ chân [ST L78M, Figure 2](https://www.st.com/resource/en/datasheet/l78m.pdf) dùng 1=IN, 2=GND, 3=OUT; cần xác nhận đúng hãng/package và mapping pad của linh kiện đang dùng. Đây là khác biệt ở ký hiệu đầu vào, chưa đủ để kết luận PCB thực đã đấu sai. PB6/PB7 chưa có thạch anh trong ảnh; cấu hình 8 MHz cần được thực hiện bằng nguồn clock/fuse thực tương ứng, firmware không tự thiết lập fuse.
+**Đối chiếu linh kiện nguồn theo đúng package:** ký hiệu trong schematic ghi IN=1, OUT=2, GND=3. Hình Toshiba TA78xxF do người dùng cung cấp cũng định nghĩa 1=INPUT, 2=OUTPUT, 3=COMMON/GND và bố trí chân từ trái sang phải là 1–3–2 khi nhìn đúng mặt trong hình. Vì vậy không thể kết luận ký hiệu này sai chỉ bằng cách so với [ST L78M, Figure 2](https://www.st.com/resource/en/datasheet/l78m.pdf), vốn đánh số 1=IN, 2=GND, 3=OUT. Kiểm tra linh kiện thật, mặt nhìn và mapping chân-to-pad của footprint; không đổi chân 2/3 chỉ để giống một hãng khác. PB6/PB7 chưa có thạch anh trong ảnh; cấu hình 8 MHz cần được thực hiện bằng nguồn clock/fuse thực tương ứng, firmware không tự thiết lập fuse.
 
 ## 4. ADC: chuyển chiết áp thành duty
 
@@ -440,7 +441,7 @@ Sau build, chạy:
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Firmware\tools\package-submission.ps1
 ```
 
-Script kiểm hash source/artifact so với manifest và tạo `ME4169E.zip` ở thư mục gốc. Giải nén được thư mục project `ME4169E/`, chứa `Firmware/`, README, workspace VS Code và ba input đề/schematic/hướng dẫn motor; không chứa toolchain, datasheet lớn, test, audit, gói cũ. Hai bản Release A/B và Hall được kèm khi đã build; mỗi bản có manifest riêng. Dùng `-WithoutInput` để bỏ các input; khi đó liên kết input cần đọc tại workspace gốc.
+Script kiểm hash source/artifact so với manifest và tạo `ME4169E.zip` ở thư mục gốc. Giải nén được thư mục project `ME4169E/`, chứa `Firmware/`, README, workspace VS Code, cấu hình `.vscode/` và ba input đề/schematic/hướng dẫn motor; không chứa toolchain, datasheet lớn, test, audit, gói cũ. Hai bản Release A/B và Hall được kèm khi đã build; mỗi bản có manifest riêng. Dùng `-WithoutInput` để bỏ các input; khi đó liên kết input cần đọc tại workspace gốc.
 
 Gói vượt 3.000.000 byte sẽ bị từ chối. Đây là dung lượng riêng gói chương trình; sau khi thêm báo cáo/file thiết kế phải kiểm lại tổng theo đề.
 
@@ -456,7 +457,19 @@ Kiểm tra gồm build/link, checksum/payload HEX so với ELF/BIN, thực thi i
 
 Bản **0.2.1** đã qua **5.462 assertion C** trong năm lượt tự kiểm tra và các ca tích hợp bổ sung: STOP ngắn khi RUN còn debounce; chuyển duty 100% → PWM → tắt; cửa sổ RPM khi lệch pha lịch; ADC/motor qua thời điểm bộ đếm mili giây quay vòng; lỗi tràn encoder. Mô hình Timer1 đã kiểm tra sóng PWM 10 kHz, duty khoảng 50% trong sai số lượng tử của mô hình; thử encoder liên tục 12.000 count/giây trong hai đợt, mỗi đợt 3.000 count, cho cả A/B và Hall. Tốc độ thử này không phải mức tối đa đã được chứng nhận trên bo.
 
+Đợt rà trước nạp bổ sung đã biên dịch cả 9 module C cho hai chế độ với cảnh báo chuyển kiểu/dấu (`-Wconversion -Wsign-conversion -Werror`), kiểm địa chỉ thanh ghi/vector và cấu hình ADC/tick theo target ATmega8. Hai bản HEX được build lại và khớp byte với bản đã bàn giao. Ca chạy ADC trong ứng dụng thật đã thử đầu vào mô hình 0/2,5/5 V và duty 0/50/100%; cố tình giữ chuyển đổi ADC chưa hoàn tất dẫn đến lỗi E:2 và ENA/IN1/IN2 tắt. Bằng chứng riêng nằm trong `emulation-adc-sweep.json` của từng thư mục Release.
+
 Đây là kiểm tra phần mềm; chưa phải mô phỏng điện mạch hay phép đo PWM/RPM trên bo thật.
+
+### 13.4. VS Code báo đỏ trong adc.c hoặc header AVR
+
+Project có cấu hình [C/C++ cho AVR](.vscode/c_cpp_properties.json), [tác vụ build](.vscode/tasks.json) và gợi ý extension `ms-vscode.cpptools`. Mở thư mục chứa README hoặc `ME4169E.code-workspace`, cài toolchain bằng lệnh tại mục 13.1. Cấu hình editor dùng `.tools/avr/avr/bin/avr-gcc.exe`, `-mmcu=atmega8`, include của project và macro `__AVR_ATmega8__`; không dùng GCC/MinGW cho Windows để suy ra thanh ghi AVR.
+
+Chọn **C/C++: Select a Configuration → ATmega8 Release A-B** hoặc **ATmega8 Release Hall** theo bản đang đọc. Nếu VS Code còn giữ lỗi cũ, chạy **C/C++: Reset IntelliSense Database**, rồi **Developer: Reload Window**. Dùng **Ctrl+Shift+B** để build A/B; bản Hall nằm trong **Terminal: Run Build Task**. Các tác vụ này không nạp chip và không ghi fuse.
+
+Nếu dùng toolchain qua `AVR_BIN`, sửa `compilerPath` và các đường dẫn include của toolchain trong cấu hình editor cho phù hợp. C/C++ IntelliSense không có chế độ kiến trúc AVR riêng; cấu hình dùng parser GCC x86 để hỗ trợ đọc mã và truy vấn header/macro từ AVR-GCC. Kích thước kiểu dữ liệu, mã máy và kết quả build phải kiểm bằng AVR-GCC thật (AVR có `int` và con trỏ 16 bit). Không tắt gạch đỏ để che lỗi. Nếu vẫn có thông báo, xem nguyên văn lỗi trong **Problems** và log build.
+
+Trong bản Release 8 MHz, `adc.c` dùng ADC0/PC0, tham chiếu AVCC, prescaler 64 nên clock ADC là 125 kHz. Code đọc ADCL trước ADCH, bỏ mẫu đầu và lọc số trước khi đổi ra duty. Chỉ thị `#error` trong nhánh `#else` kiểm clock ADC là rào kiểm tra lúc biên dịch; tại cấu hình hợp lệ, nhánh này không được biên dịch.
 
 ## 14. Cấu hình khi chuyển sang phần cứng thực
 
@@ -485,6 +498,18 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\Firmware\build.ps1 -Profil
 Đổi `F_CPU` chỉ thay giả định biên dịch, không đổi fuse/tần số CPU thực. Clock sai làm sai tick, RPM, PWM và delay LCD. Chưa có programmer/fuse xác nhận; trước nạp cần đọc signature, đối chiếu clock/fuse, chọn HEX tương ứng và verify flash sau ghi. Project không tự ghi fuse.
 
 Tầng công suất được chốt là L298 ngoài theo [hướng dẫn đấu dây](Input/Motor_KDE3852.md), nguồn motor 12 V. Firmware không đo dòng, không bảo vệ kẹt trục bằng cảm biến dòng và không suy ra dòng kẹt từ con số 0,1 A trong tên sản phẩm. Cần đối chiếu OUT/GND của 78M05 với đúng package/footprint, kiểm tụ bypass VCC/AVCC và điện trở kéo xuống ENA trước thử phần cứng. Các bài đo còn cần thực hiện: nguồn/reset, LCD, ADC đầu/cuối, PWM trên scope, chiều quay, STOP, RPM sau hiệu chuẩn và hành vi có tải. Bổ sung kết quả đo thật cùng thiết kế/video vào hồ sơ đồ án.
+
+### 14.1. Trình tự kiểm tra lần nạp đầu
+
+1. Ngắt nguồn 12 V của motor. Kiểm tra đường logic +5 V tại VCC chân 7 và AVCC chân 20, GND chân 8/22; đối chiếu chân nguồn với đúng linh kiện thực như mục 3.2. Không cấp đồng thời hai nguồn +5 V từ USBasp và mạch nếu chưa thiết kế cho việc đó.
+2. Kết nối ICSP theo tên tín hiệu: MISO→PB4/chân 18, MOSI→PB3/chân 17, SCK→PB5/chân 19, RESET→chân 1, +5 V và GND. Đọc signature/fuse trước; target là ATmega8. Nếu clock chưa biết, dùng SCK chậm để đọc. Xác nhận CPU thực chạy 8 MHz, không chỉ giá trị `F_CPU` trong code. Không ghi fuse theo phỏng đoán hoặc tắt RESET/SPIEN.
+3. Chọn `Firmware/build/release/firmware.hex` nếu encoder có A/B; chọn `release-hall/firmware.hex` nếu chỉ dùng một OUT đếm cạnh lên. Nạp Flash và giữ Verify. Hai bản hiện đều có CPR=0 nên LCD hiện `C:`, chưa phải RPM.
+4. Cấp logic, chưa cấp motor: sau reset phải STOP, `E:0`, ENA/PB1 thấp. Giữ RUN trong lúc reset phải vẫn dừng; thả RUN ổn định rồi nhấn lại mới cho chạy. Xoay chiết áp kiểm SET từ 0.0 đến 100.0; SET có thể khác 0 khi STOP nhưng ENA vẫn phải thấp.
+5. Thử logic RUN/STOP trước khi nối nguồn motor: RUN chọn IN1/PB0 cao, IN2/PB2 thấp; duty tăng theo ramp. STOP phải đưa ENA thấp và IN1/IN2 thấp. Nếu có oscilloscope/logic analyzer, tại SET khoảng 50% kiểm PB1 có chu kỳ khoảng 100 us (10 kHz) khi clock thật là 8 MHz. Ở SET=0, ENA giữ thấp; ở 100%, ENA giữ cao nên không còn sóng xung.
+6. Xác định nguồn, GND và mức logic encoder theo motor thực; không dùng 12 V làm nguồn logic chỉ vì motor dùng 12 V. Header4 chỉ có ENC_A/ENC_B, không có chân cấp nguồn/GND. Quay trục tay để kiểm count; hiệu chuẩn CPR đúng chế độ trước khi build bản RPM.
+7. Với L298, bỏ jumper ENA và nối PB1→ENA, PB0→IN1, PB2→IN2, GND chung; lắp kéo xuống ENA 10 kΩ. Đưa chiết áp về 0 rồi mới cấp motor 12 V, tăng dần và thử STOP/reset. STOP ngắt điều khiển, không có nghĩa trục dừng tức thời; motor có thể quay trớn. Chỉ tăng tải sau khi các phép thử này đạt.
+
+Các bước trên là quy trình để người dùng thực hiện trên mạch; chưa có kết quả đo thật được ghi nhận. Build và mô phỏng instruction không xác nhận chất lượng nguồn, dây motor/encoder, nhiễu, footprint hay dòng tải của bo.
 
 ## 15. Tài liệu tham khảo
 

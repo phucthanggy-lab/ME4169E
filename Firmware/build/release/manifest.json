@@ -1,6 +1,6 @@
 {
     "motorOutputsLocked":  false,
-    "finishedAtUtc":  "2026-11-11T03:39:50.4961305Z",
+    "finishedAtUtc":  "2026-11-11T10:03:09.7016900Z",
     "version":  "ME4169E-0.2.1",
     "sourceFiles":  [
                         {
@@ -92,16 +92,16 @@
                             "path":  "Firmware/tools/install-toolchain.ps1"
                         },
                         {
-                            "sha256":  "ebe4576cfe1caf4c27a72736b5f4bf0f749e01ec054c789f5aa9c8e69e303159",
+                            "sha256":  "68a3dd7023641f3d3c166c5bc7a5202b4a98469b9b389b1fc0b1b89e340cf9a9",
                             "path":  "Firmware/tools/package-submission.ps1"
                         }
                     ],
     "flashLimit":  8192,
     "flashBytes":  7052,
     "artifacts":  {
-                      "firmware.map":  "2e3067e3322c4f980b82104522f84952236862ace59fd8f3f4112b7140508751",
+                      "firmware.map":  "8059a5e85c9df19a7941ec5ea4d7c6f486aabf5f5fa1458d34fb47fa31518e6c",
                       "firmware.bin":  "06c8f057c7a84a462c3f701b2713a63fc94950bb3cab78c41b6a0c772a127cad",
-                      "firmware.elf":  "13d2baf35352afdaf346f9ec95de0f59d3d9e87119c046e9cf237ffd98baef96",
+                      "firmware.elf":  "e6a28e7306459ff77175d9f40d7a1fdaf8c7a0ce44b869965a472bf478f55b8a",
                       "firmware.hex":  "d6a213be137bc113645660be007a98c69d09e6007f6bfc3c8475b2036cfb82f6"
                   },
     "staticSramBytes":  238,
@@ -122,7 +122,7 @@
                                    "PWM_HZ":  10000,
                                    "RESET_TEST_CONFIRMED":  0
                                },
-    "startedAtUtc":  "2026-11-11T03:39:48.6327800Z",
+    "startedAtUtc":  "2026-11-11T10:03:08.5443466Z",
     "compiler":  "avr-gcc.exe (GCC) 7.3.0",
     "sramLimit":  1024,
     "compileFlags":  [
