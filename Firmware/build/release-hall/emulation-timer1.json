@@ -3,32 +3,35 @@
   "syntheticApplication": false,
   "heldRunAtBoot": false,
   "folder": "Firmware\\build\\release-hall",
-  "cycles": 8800000,
-  "instructions": 5717540,
-  "timerEvents": 1038,
-  "milliseconds": 1038,
+  "cycles": 8000000,
+  "instructions": 5217733,
+  "timerEvents": 938,
+  "milliseconds": 938,
   "encoderPosition": 8,
   "faultAfterRun": 0,
   "lcdRows": [
     "RUN F SET: 50.0 ",
-    "C:         8 E:0"
+    "RPM~:      0 E:0"
   ],
   "lcdClears": 1,
   "lcdDataWrites": 96,
   "motorDdr": 7,
   "motorPortLatch": 0,
-  "observedStackBytes": 158,
+  "observedStackBytes": 348,
   "status": "PASS",
   "clockHz": 8000000,
   "encoderMode": 1,
-  "countsPerRev": 0,
+  "countsPerRev": 234.3,
+  "nominalCpr": true,
+  "cprNumerator": 2343,
+  "cprDenominator": 10,
   "pwmWaveform": {
     "model": "AVR8js Timer1 with ATmega8 register/port mapping",
     "observedRisingEdges": 200,
-    "frequencyHz": 10000.062814464914,
-    "dutyPercent": 49.87468828321786
+    "frequencyHz": 10000,
+    "dutyPercent": 49.87375
   },
-  "elfSha256": "e67fcc1faaa413d35e7dffdcbe495544b310407eb26b778162fac22b8a5bcc2b",
-  "binarySha256": "242788b956137bebcbf3e39319987bf0e89cf803399c6dce36690e249d26b85b",
-  "recordedAtUtc": "2026-11-12T08:45:49.324Z"
+  "elfSha256": "9805e6d3f12682ad5e32e1c9362f4563e0d3adbf8bd7eaab5a8470c05a69f48d",
+  "binarySha256": "f6bab40753bb42c3cb8c090e2e9018541c26a5026ee1a354c22348254b64c8a1",
+  "recordedAtUtc": "2026-11-12T09:33:02.688Z"
 }

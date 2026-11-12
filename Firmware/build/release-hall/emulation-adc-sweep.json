@@ -20,12 +20,15 @@
     }
   ],
   "faultAfterTimeout": 2,
-  "observedStackBytes": 158,
+  "observedStackBytes": 348,
   "status": "PASS",
   "clockHz": 8000000,
   "encoderMode": 1,
-  "countsPerRev": 0,
-  "elfSha256": "e67fcc1faaa413d35e7dffdcbe495544b310407eb26b778162fac22b8a5bcc2b",
-  "binarySha256": "242788b956137bebcbf3e39319987bf0e89cf803399c6dce36690e249d26b85b",
-  "recordedAtUtc": "2026-11-12T08:45:52.026Z"
+  "countsPerRev": 234.3,
+  "nominalCpr": true,
+  "cprNumerator": 2343,
+  "cprDenominator": 10,
+  "elfSha256": "9805e6d3f12682ad5e32e1c9362f4563e0d3adbf8bd7eaab5a8470c05a69f48d",
+  "binarySha256": "f6bab40753bb42c3cb8c090e2e9018541c26a5026ee1a354c22348254b64c8a1",
+  "recordedAtUtc": "2026-11-12T09:33:04.936Z"
 }

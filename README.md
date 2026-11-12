@@ -6,7 +6,7 @@ Project sử dụng C và AVR-GCC để đọc chiết áp bằng ADC, tạo l�
 
 Mở `ME4169E.code-workspace` để sử dụng tên workspace **ME4169E** trong VS Code.
 
-**Cấu hình hiện tại:** motor GA25-370 **12 V, 280 RPM**, encoder A/B cấp **5 V**, nguồn motor **12 V**, driver **L298 cầu B**, ATmega8 **8 MHz**, PWM **10 kHz**, RUN chạy thuận và STOP ưu tiên. Bản mặc định là `Release`, ngõ motor đã được mở trong chương trình; sau reset vẫn dừng và cần một lần nhấn RUN mới để chạy. Có hai bản encoder: A/B x4 và Hall một kênh x1. CPR chưa biết nên LCD hiện số đếm `C:` để hiệu chuẩn; nhập CPR thực sẽ chuyển sang hiển thị RPM. Chưa nạp hoặc thử trên mạch thật.
+**Cấu hình hiện tại:** motor GA25-370 **12 V, 280 RPM**, encoder A/B cấp **5 V**, nguồn motor **12 V**, driver **L298 cầu B**, ATmega8 **8 MHz**, PWM **10 kHz**, RUN chạy thuận và STOP ưu tiên. Bản mặc định là `Release`, ngõ motor đã được mở trong chương trình; sau reset vẫn dừng và cần một lần nhấn RUN mới để chạy. Bản A/B x4 dùng **CPR danh nghĩa 937,2 count/vòng trục ra** để hiển thị `RPM~`; bản Hall x1 dùng 234,3. Dấu `~` cho biết hệ số lấy từ thông số shop, chưa đo trên motor. Vẫn có chế độ `C:` để hiệu chuẩn. Chưa nạp hoặc thử trên mạch thật.
 
 Xem [đấu dây L298, lựa chọn encoder và hiệu chuẩn](Input/Motor_GA25_370.md) trước khi dùng HEX. ENB nhận PWM, cần bỏ jumper ENB của module và thêm kéo xuống 10 kΩ để tắt cầu khi MCU reset/nạp. Encoder lấy +5 V/GND tại Header3; motor nhận nguồn 12 V qua L298. Header4 chỉ mang A/B; R7/R8 không thay thế nguồn encoder.
 
@@ -37,8 +37,8 @@ ME4169E/
 |---|---|---|
 | Vi điều khiển ATmega8 | Target `-mmcu=atmega8`, DIP-28, 8 MHz theo cấu hình người dùng | Đã build; chưa đo clock hoặc đọc fuse |
 | Điều khiển tốc độ vòng hở | Chiết áp → ADC0 → duty → ramp → PWM 10 kHz trên ENB L298 | Release có ngõ ra hoạt động; STOP/RUN được kiểm tra phần mềm |
-| Phản hồi tốc độ/vị trí | Chọn A/B x4 hoặc Hall x1, đếm và tính RPM | Cần hiệu chuẩn CPR để công bố RPM |
-| Hiển thị LCD/LED 7 thanh | LCD 16×2 song song 4-bit | C: số đếm khi CPR=0; RPM khi đã nhập CPR |
+| Phản hồi tốc độ/vị trí | Chọn A/B x4 hoặc Hall x1, đếm và tính RPM | Mặc định dùng CPR danh nghĩa; có thể nhập CPR hiệu chuẩn |
+| Hiển thị LCD/LED 7 thanh | LCD 16×2 song song 4-bit | RPM~: CPR danh nghĩa; RPM: CPR đã nhập; C: chế độ đếm |
 | Timer, Counter, PWM, ngắt, ADC | Timer1 PWM, Timer2 định thời, INT0/INT1 đếm encoder, ADC0 | Chi tiết tại mục 4–8 |
 | UART, SPI, I2C | Phân tích nguyên lý, chân và khả năng áp dụng tại mục 10 | Chưa có truyền nhận runtime; dành chân SPI cho ICSP |
 | Nguyên lý, PCB, tích hợp thực tế | Có ảnh sơ đồ đầu vào để đối chiếu | Chưa có bộ thiết kế/mô phỏng và kết quả đo tương ứng |
@@ -291,12 +291,12 @@ Snapshot có cờ `moving` ghi nhận bất kỳ bước hợp lệ nào kể t�
 ### 8.3. PPR, CPR và tính RPM
 
 - **PPR:** ở đây là số chu kỳ kênh A trên một vòng trục encoder; phải kiểm tra định nghĩa của nhà sản xuất.
-- **CPR trong code:** số count trên một vòng **trục được hiển thị** ở chế độ đang chọn, nhập vào `CFG_ENCODER_COUNTS_PER_MEASURED_REV` hoặc tham số `-EncoderCountsPerRev`.
+- **CPR trong code:** số count trên một vòng **trục ra** ở chế độ đang chọn. Release mặc định suy ra CPR danh nghĩa từ thông số shop. Tham số `-EncoderCountsPerRev` truyền macro `CFG_ENCODER_COUNTS_PER_MEASURED_REV` khi biên dịch, cho phép nhập CPR nguyên sau hiệu chuẩn, hoặc nhập 0 để xem số đếm thô.
 - Nếu encoder quay G vòng khi trục cần đo quay một vòng, `C = 4 × PPR × G` theo định nghĩa trên. Không mặc định tỷ số truyền 1:1.
 
 Với Hall cạnh lên x1, C là số cạnh lên trên một vòng trục cần đo, không nhân 4. Giá trị hiệu chuẩn không được dùng lẫn giữa hai chế độ. Đo N count sau đúng 10 vòng cùng chiều thì C=N/10; xem quy trình và điều kiện nguồn trong [hướng dẫn motor](Input/Motor_GA25_370.md).
 
-`CFG_ENCODER_PPR` và các trường tỷ số truyền là thông tin mô tả. Hàm RPM dùng trực tiếp `CFG_ENCODER_COUNTS_PER_MEASURED_REV`, không tự suy ra C từ các trường khác.
+Không truyền tham số CPR: Release dùng `11 × 4 × 213/10 = 937,2` với A/B x4, hoặc `11 × 1 × 213/10 = 234,3` với Hall x1. Code giữ CPR dưới dạng tử số/mẫu số (`9372/10` hoặc `2343/10`), không làm tròn về 937 hoặc dùng số thực. Nhập CPR nguyên qua tham số sẽ thay hệ số này và chuyển nhãn từ `RPM~:` sang `RPM:`; nhập 0 chọn `C:`. Development/Test mặc định dùng `C:`. Manifest ghi giá trị CPR có hiệu lực, tử số, mẫu số và nguồn danh nghĩa.
 
 ```text
 RPM = round(Δcount × 60000 / (C × Δt_ms))
@@ -322,14 +322,16 @@ LCD được giả định tương thích HD44780. Đây là giao tiếp **song 
 
 Chỉ ghi dòng đổi nội dung và không clear mỗi lần cập nhật để giảm nhấp nháy. Khi ghi nibble, giữ nguyên các bit PD2/PD3 để không đổi pull-up encoder. LCD có delay ngắn trong vòng chính, không nằm trong ISR.
 
-Ví dụ Release đã nhấn RUN, chiết áp ở giữa và chưa hiệu chuẩn:
+Ví dụ Release đã nhấn RUN, chiết áp ở giữa và encoder đang đo tốc độ khoảng 140 vòng/phút:
 
 ```text
 RUN F SET: 50.0
-C:       120 E:0
+RPM~:    140 E:0
 ```
 
-Sau khi nhập CPR thực và build lại, dòng hai chuyển thành `RPM: ... E:0`. `RPM: ENC?` chỉ cửa sổ encoder lỗi; `OVER RANGE` chỉ RPM vượt vùng hiển thị. Các nhãn là `STOP`, `RUN F`, `RUN B`, `COAST`, `FAULT`. Chỉ bản Development mới hiển thị `LOCK`/`LOCK!` và chặn RUN bằng lỗi cấu hình.
+`SET: 50.0` là lệnh PWM 50,0%, không phải RPM đặt. Dòng hai là tốc độ tính từ xung thực, làm tròn đến vòng/phút; số 140 chỉ là ví dụ, không suy ra từ duty 50%. `~` nhắc rằng CPR đang dùng là danh nghĩa. Tốc độ lấy mẫu mỗi khoảng 250 ms, LCD cập nhật mỗi 200 ms. Khi vừa khởi động chưa đủ cửa sổ đo sẽ hiện `RPM~: ---- E:0`; khi không có xung thì hiện 0. Nhấn STOP tắt PWM ngay, nhưng RPM có thể còn khác 0 khi trục đang quay trớn.
+
+Sau khi nhập CPR thực và build lại, dòng hai chuyển thành `RPM: ... E:0`. Bản `-EncoderCountsPerRev 0` hiện `C: ... E:0`, nhấn STOP đặt mốc đếm hiển thị về 0. `RPM~: ENC?`/`RPM: ENC?` chỉ cửa sổ encoder lỗi; `OVER RANGE` chỉ RPM vượt vùng hiển thị. Các nhãn là `STOP`, `RUN F`, `RUN B`, `COAST`, `FAULT`. `E:0` là chưa phát hiện lỗi; các mã lỗi xem mục trạng thái motor. Chỉ bản Development mới hiển thị `LOCK`/`LOCK!` và chặn RUN bằng lỗi cấu hình.
 
 ## 10. UART, SPI, I2C và giao thức nạp
 
@@ -419,7 +421,15 @@ Mặc định Release cho L298, clock 8 MHz, dùng `-std=gnu11 -Os`, cảnh báo
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Firmware\build.ps1 -EncoderMode HallRising
 ```
 
-Khi đã đo được CPR, ví dụ minh họa C=40, thêm `-EncoderCountsPerRev 40` vào lệnh cho đúng chế độ. Giá trị 40 không phải thông số xác nhận của motor. Nếu A/B ngược dấu, thêm `-EncoderReverse`; Hall một kênh không có tùy chọn đảo dấu.
+Không cần nhập CPR để bản Release hiện RPM: mặc định đã dùng hệ số danh nghĩa. Khi đã đo được CPR, ví dụ minh họa C=40, thêm `-EncoderCountsPerRev 40` vào lệnh cho đúng chế độ. Giá trị 40 không phải thông số xác nhận của motor. Nếu A/B ngược dấu, thêm `-EncoderReverse`; Hall một kênh không có tùy chọn đảo dấu.
+
+Để tạo riêng bản đếm xung phục vụ hiệu chuẩn mà giữ thư mục Release mặc định:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Firmware\build.ps1 -EncoderCountsPerRev 0 -OutputDirectory Firmware/build/release-counts
+```
+
+Nạp `Firmware/build/release-counts/firmware.hex` để xem `C:`. Muốn trở về RPM danh nghĩa, nạp bản `Firmware/build/release/firmware.hex` mặc định. Lệnh build có CPR tùy chỉnh sẽ ghi đè thư mục đầu ra đã chọn; kiểm tra manifest trước khi nạp.
 
 | File trong `Firmware/build/release/` hoặc `release-hall/` | Mục đích |
 |---|---|
@@ -455,9 +465,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\.development\Testing\run-t
 
 Kiểm tra gồm build/link, checksum/payload HEX so với ELF/BIN, thực thi instruction AVR bằng AVR8js với mô hình thanh ghi ATmega8, chạy `main()` với ADC/encoder/nút, RUN giữ khi reset, STOP, x4, Hall x1, đảo dấu A/B, RPM, debounce, ramp, duty biên và nhánh lỗi. Có các kịch bản chạy chính bản Release 8 MHz, kiểm PWM 10 kHz, màn hình C và RPM với CPR giả lập. Fixture thử đảo chiều và cực tính active-low là dữ liệu kiểm thử, không phải cấu hình L298 bàn giao.
 
-Bản **0.2.2** đã qua **5.472 assertion C** trong năm lượt tự kiểm tra và các ca tích hợp bổ sung: STOP ngắn khi RUN còn debounce; chuyển duty 100% → PWM → tắt; cửa sổ RPM khi lệch pha lịch; ADC/motor qua thời điểm bộ đếm mili giây quay vòng; lỗi tràn encoder. Mô hình Timer1 đã kiểm tra sóng PWM 10 kHz, duty khoảng 50% trong sai số lượng tử của mô hình; thử encoder liên tục 12.000 count/giây trong hai đợt, mỗi đợt 3.000 count, cho cả A/B và Hall. Tốc độ thử này không phải mức tối đa đã được chứng nhận trên bo.
+Bản **0.2.3** đã qua **5.502 assertion C** trong năm lượt tự kiểm tra và các ca tích hợp bổ sung: STOP ngắn khi RUN còn debounce; chuyển duty 100% → PWM → tắt; cửa sổ RPM khi lệch pha lịch; ADC/motor qua thời điểm bộ đếm mili giây quay vòng; lỗi tràn encoder. Mô hình Timer1 đã kiểm tra sóng PWM 10 kHz, duty khoảng 50% trong sai số lượng tử của mô hình; thử encoder liên tục 12.000 count/giây trong hai đợt, mỗi đợt 3.000 count, cho cả A/B và Hall. Tốc độ thử này không phải mức tối đa đã được chứng nhận trên bo.
 
-Đợt rà trước nạp bổ sung đã biên dịch cả 9 module C cho hai chế độ với cảnh báo chuyển kiểu/dấu (`-Wconversion -Wsign-conversion -Werror`), kiểm địa chỉ thanh ghi/vector và cấu hình ADC/tick theo target ATmega8. Hai bản HEX được build lại và khớp byte với bản đã bàn giao. Ca chạy ADC trong ứng dụng thật đã thử đầu vào mô hình 0/2,5/5 V và duty 0/50/100%; cố tình giữ chuyển đổi ADC chưa hoàn tất dẫn đến lỗi E:2 và ENB/IN3/IN4 tắt. Bằng chứng riêng nằm trong `emulation-adc-sweep.json` của từng thư mục Release.
+Đợt rà trước nạp bổ sung đã biên dịch cả 9 module C cho hai chế độ với cảnh báo chuyển kiểu/dấu (`-Wconversion -Wsign-conversion -Werror`), kiểm địa chỉ thanh ghi/vector và cấu hình ADC/tick theo target ATmega8. Hai bản HEX được kiểm checksum và payload khớp ELF/BIN tương ứng. Ca chạy ADC trong ứng dụng thật đã thử đầu vào mô hình 0/2,5/5 V và duty 0/50/100%; cố tình giữ chuyển đổi ADC chưa hoàn tất dẫn đến lỗi E:2 và ENB/IN3/IN4 tắt. Bằng chứng riêng nằm trong `emulation-adc-sweep.json` của từng thư mục Release.
+
+Bản 0.2.3 bổ sung kiểm CPR phân số 9372/10 và 2343/10, dấu âm/dương, làm tròn và giới hạn phép tính 64-bit. Bơm 4.374 count/s vào encoder mô hình trong lúc RUN cho LCD `RPM~: 280 E:0`, sau khi hết xung thì về 0. Cả hai bản danh nghĩa đều được thử lệch pha cửa sổ RPM. Hai bản đếm riêng với tham số CPR=0 vẫn hiển thị C và đặt mốc 0 bằng STOP. Các ca cấu hình CPR danh nghĩa bằng 0 hoặc vượt giới hạn tử số bị từ chối khi biên dịch.
 
 Đợt kiểm tra GA25-370 bổ sung đã đưa 4.400 count/giây qua hai ngắt A/B trong khi RUN, ADC và LCD cùng hoạt động: đủ 4.400 count, không có chuyển trạng thái sai; STOP tắt PWM. Tốc độ này mô phỏng quy mô encoder của motor đã chọn, không xác nhận motor thật đang quay đúng 280 RPM.
 
@@ -487,11 +499,12 @@ Cấu hình tập trung tại [config.h](Firmware/include/config.h). Thông số
 | `CFG_PWM_TARGET_HZ`, `CFG_MOTOR_DUTY_LIMIT_PERMILLE` | Tần số và duty tối đa theo phần cứng |
 | `CFG_RUN_DIRECTION` | Nút RUN chọn thuận (1) hoặc nghịch (2) |
 | `CFG_ENCODER_MODE`, `CFG_ENCODER_REVERSED` | Chọn x4 hoặc Hall x1; đổi dấu chỉ cho A/B |
-| `CFG_ENCODER_COUNTS_PER_MEASURED_REV` | Số count trên một vòng trục ở chế độ đã chọn; 0 hiện màn hình hiệu chuẩn C |
+| `CFG_ENCODER_COUNTS_PER_MEASURED_REV` | Macro ghi đè qua tham số build: CPR nguyên đã đo; truyền 0 hiện màn hình hiệu chuẩn C |
+| `CFG_ENCODER_USE_NOMINAL_CPR`, `CFG_ENCODER_CPR_NUMERATOR`, `CFG_ENCODER_CPR_DENOMINATOR` | Tự chọn CPR danh nghĩa khi Release không có tham số CPR; tử số/mẫu số giữ phần thập phân |
 | `CFG_REVERSAL_*` | Xác nhận đảo chiều, dead-time, thời gian yên, timeout |
 | `CFG_MOTOR_OUTPUTS_ENABLE` | Cho phép cấu hình ngõ motor khi các điều kiện hợp lệ |
 
-**Motor được chọn:** GA25-370 12 V, 280 RPM là tốc độ không tải danh nghĩa, không phải RPM đặt. Thông số shop 11 xung/kênh và hộp số khoảng 21,3:1 chỉ là tham khảo; x4 tương ứng xấp xỉ 937,2 count/vòng trục ra nếu các định nghĩa đó đúng. CPR mặc định vẫn bằng 0 để hiệu chuẩn, không tự nhập 11 hoặc 280. Xem [phân biệt nguồn, sơ đồ 6 dây và CPR](Input/Motor_GA25_370.md).
+**Motor được chọn:** GA25-370 12 V, 280 RPM là tốc độ không tải danh nghĩa, không phải RPM đặt. Thông số shop 11 chu kỳ/kênh/vòng trục motor và hộp số khoảng 21,3:1 cho CPR danh nghĩa 937,2 ở x4. Release dùng hệ số này để hiện `RPM~`, không gán tốc độ cố định 280 và không coi đây là phép đo CPR thực. Xem [phân biệt nguồn, sơ đồ 6 dây và CPR](Input/Motor_GA25_370.md).
 
 Release có cấu hình chạy mặc định. Muốn kiểm tra logic mà khóa ngõ motor, dùng Development:
 
@@ -507,10 +520,10 @@ Tầng công suất được chốt là L298 ngoài theo [hướng dẫn đấu 
 
 1. Ngắt nguồn 12 V của motor. Kiểm tra đường logic +5 V tại VCC chân 7 và AVCC chân 20, GND chân 8/22; đối chiếu chân nguồn với đúng linh kiện thực như mục 3.2. Không cấp đồng thời hai nguồn +5 V từ USBasp và mạch nếu chưa thiết kế cho việc đó.
 2. Kết nối ICSP theo tên tín hiệu: MISO→PB4/chân 18, MOSI→PB3/chân 17, SCK→PB5/chân 19, RESET→chân 1, +5 V và GND. Đọc signature/fuse trước; target là ATmega8. Nếu clock chưa biết, dùng SCK chậm để đọc. Xác nhận CPU thực chạy 8 MHz, không chỉ giá trị `F_CPU` trong code. Không ghi fuse theo phỏng đoán hoặc tắt RESET/SPIEN.
-3. Chọn `Firmware/build/release/firmware.hex` nếu encoder có A/B; chọn `release-hall/firmware.hex` nếu chỉ dùng một OUT đếm cạnh lên. Nạp Flash và giữ Verify. Hai bản hiện đều có CPR=0 nên LCD hiện `C:`, chưa phải RPM.
+3. Với motor GA25-370 A/B đã mua, chọn `Firmware/build/release/firmware.hex`: CPR danh nghĩa 937,2, LCD hiện `RPM~:`. `release-hall/firmware.hex` chỉ dành cho đếm cạnh lên kênh A, CPR danh nghĩa 234,3. Nạp Flash và giữ Verify.
 4. Cấp logic, chưa cấp motor: sau reset phải STOP, `E:0`, ENB/PB1 thấp. Giữ RUN trong lúc reset phải vẫn dừng; thả RUN ổn định rồi nhấn lại mới cho chạy. Xoay chiết áp kiểm SET từ 0.0 đến 100.0; SET có thể khác 0 khi STOP nhưng ENB vẫn phải thấp.
 5. Thử logic RUN/STOP trước khi nối nguồn motor: RUN chọn IN3/PB0 cao, IN4/PB2 thấp; duty tăng theo ramp. STOP phải đưa ENB thấp và IN3/IN4 thấp. Nếu có oscilloscope/logic analyzer, tại SET khoảng 50% kiểm PB1 có chu kỳ khoảng 100 us (10 kHz) khi clock thật là 8 MHz. Ở SET=0, ENB giữ thấp; ở 100%, ENB giữ cao nên không còn sóng xung.
-6. Xác định nguồn, GND và mức logic encoder theo motor thực; không dùng 12 V làm nguồn logic chỉ vì motor dùng 12 V. Header4 chỉ có ENC_A/ENC_B, không có chân cấp nguồn/GND. Quay trục tay để kiểm count; hiệu chuẩn CPR đúng chế độ trước khi build bản RPM.
+6. Xác định nguồn, GND và mức logic encoder theo motor thực; không dùng 12 V làm nguồn logic chỉ vì motor dùng 12 V. Header4 chỉ có ENC_A/ENC_B, không có chân cấp nguồn/GND. Dùng bản đếm riêng để kiểm count nếu cần; có thể nhập CPR đã hiệu chuẩn để cải thiện độ chính xác RPM.
 7. Với L298, bỏ jumper ENB và nối PB1→ENB, PB0→IN3, PB2→IN4, GND chung; lắp kéo xuống ENB 10 kΩ. Đưa chiết áp về 0 rồi mới cấp motor 12 V, tăng dần và thử STOP/reset. STOP ngắt điều khiển, không có nghĩa trục dừng tức thời; motor có thể quay trớn. Chỉ tăng tải sau khi các phép thử này đạt.
 
 Các bước trên là quy trình để người dùng thực hiện trên mạch; chưa có kết quả đo thật được ghi nhận. Build và mô phỏng instruction không xác nhận chất lượng nguồn, dây motor/encoder, nhiễu, footprint hay dòng tải của bo.

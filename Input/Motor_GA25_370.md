@@ -43,9 +43,17 @@ Các GPIO MCU giống bản dùng cầu A trước đây. Dùng cầu B chỉ đ
 
 ## CPR và hiển thị RPM
 
-`CFG_ENCODER_PPR=11` và tỉ số `213/10` chỉ ghi lại tham khảo của shop. Firmware **không tự lấy hai số này làm CPR đã hiệu chuẩn**. Nếu 11 là số chu kỳ trên một kênh/một vòng trục motor, x4 cho 44 count/vòng trục motor; với hộp số danh nghĩa 21,3:1, trục ra xấp xỉ **937,2 count/vòng**. Không gán CPR=11, 22, 280 hoặc 937 như một phép đo thật; định nghĩa xung và tỉ số thực còn phải đối chiếu motor nhận được.
+Release mặc định dùng `CFG_ENCODER_PPR=11` và tỉ số `213/10` của shop để tính CPR danh nghĩa. Với 11 chu kỳ trên một kênh/một vòng trục motor, x4 cho 44 count/vòng trục motor; hộp số danh nghĩa 21,3:1 cho **937,2 count/vòng trục ra**. Code giữ chính xác hệ số danh nghĩa dưới dạng `9372/10`, không làm tròn CPR về 937. Đây chưa phải CPR được đo trên motor đã nhận.
 
-Do đó HEX bàn giao vẫn đặt `CFG_ENCODER_COUNTS_PER_MEASURED_REV=0`: LCD hiện `C:` để kiểm tra và hiệu chuẩn; motor vẫn chạy bình thường theo PWM. Muốn có RPM đúng, đo tổng N count sau R vòng trục ra và dùng C=N/R. Không dùng số vòng trong một khoảng thời gian giả định motor luôn quay 280 RPM để suy ra C.
+HEX `Firmware/build/release/firmware.hex` hiện **`RPM~:`**, đơn vị vòng/phút, tính từ xung encoder thu được trong từng cửa sổ khoảng 250 ms. Dấu `~` cho biết CPR lấy từ thông số danh nghĩa. Không gán cố định 280 lên LCD: tốc độ hiển thị thay đổi theo chuyển động, kể cả quay trớn sau STOP; không có xung thì về 0. Duty 50% không đảm bảo tốc độ bằng một nửa 280 RPM.
+
+Khi cần đối chiếu CPR, build riêng chế độ đếm rồi nạp HEX tương ứng:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Firmware\build.ps1 -EncoderCountsPerRev 0 -OutputDirectory Firmware/build/release-counts
+```
+
+LCD của bản này hiện `C:`. Đo tổng N count sau R vòng trục ra và dùng C=N/R; không suy ra CPR bằng cách giả định motor luôn quay 280 RPM. Quy trình:
 
 1. Kiểm tra nguồn/đấu dây, giữ motor dừng. Nhấn rồi thả STOP để C về 0.
 2. Nếu hộp số quay tay nhẹ được, ngắt nguồn motor, giữ logic/encoder, quay đúng số vòng cùng chiều và ghi count. Không cưỡng bức hộp số khó quay. Có thể dùng đánh dấu trục/video để ghi count tại cùng vị trí sau nhiều vòng khi chạy chậm; tránh cộng thêm vòng quay trớn ngoài khoảng đo.
@@ -58,10 +66,10 @@ Ví dụ **chỉ khi phép đo thực cho C=937**:
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Firmware\build.ps1 -EncoderCountsPerRev 937
 ```
 
-Số 937 trong lệnh không phải giá trị đã xác nhận cho motor của người dùng. Khi nhập CPR khác 0, LCD chuyển sang RPM vòng/phút; sau mỗi lần đổi cấu hình phải build và nạp lại HEX.
+Số 937 trong lệnh không phải giá trị đã xác nhận cho motor của người dùng. Tham số CPR nguyên khác 0 thay hệ số danh nghĩa và chuyển nhãn thành `RPM:`. Không truyền tham số CPR thì Release trở lại hệ số danh nghĩa và nhãn `RPM~:`. Mỗi lần đổi cấu hình phải build và nạp lại HEX; kiểm tra manifest để chọn đúng file.
 
-`release-hall` vẫn được giữ cho thử nghiệm chỉ một kênh A/cạnh lên x1; bỏ ngõ B và hiệu chuẩn riêng. Với motor đã mua có A/B, dùng bản `release` x4.
+`release-hall` vẫn được giữ cho thử nghiệm chỉ một kênh A/cạnh lên x1: CPR danh nghĩa **234,3 = 2343/10**, không dùng 937,2 của x4. Bỏ ngõ B và hiệu chuẩn riêng. Với motor đã mua có A/B, dùng bản `release` x4.
 
 ## Phạm vi đã kiểm tra
 
-Phần mềm được kiểm tra bằng AVR-GCC và thực thi instruction AVR với mô hình thanh ghi. Thử xung khoảng 4.400 count/s tương ứng quy mô trục motor khoảng 6.000 RPM với giả thiết 11 chu kỳ/kênh, cùng các bài thử 12.000 count/s. Đây là kiểm tra khả năng xử lý xung, không phải phép đo tốc độ, clock, dòng hoặc nhiễu trên bo thật. Chưa nạp hoặc thử motor thực.
+Phần mềm được kiểm tra bằng AVR-GCC và thực thi instruction AVR với mô hình thanh ghi. Thử 4.374 count/s trong lúc RUN cho LCD khoảng 280 vòng/phút với CPR danh nghĩa 937,2; khi hết xung, màn hình về 0. Có thêm các bài thử 12.000 count/s, CPR phân số và chế độ đếm. Đây là kiểm tra bằng tín hiệu mô hình, không phải phép đo tốc độ, clock, dòng hoặc nhiễu trên bo thật. Chưa nạp hoặc thử motor thực.

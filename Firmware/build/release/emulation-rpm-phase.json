@@ -1,0 +1,41 @@
+{
+  "kind": "Application ELF execution; ATmega8 GPIO/ADC mappings and limited Timer2 CTC model; not Proteus or physical testing",
+  "syntheticApplication": false,
+  "heldRunAtBoot": false,
+  "folder": "Firmware\\build\\release",
+  "cycles": 8000000,
+  "instructions": 5217999,
+  "timerEvents": 938,
+  "milliseconds": 940,
+  "encoderPosition": 8,
+  "faultAfterRun": 0,
+  "lcdRows": [
+    "RUN F SET: 50.0 ",
+    "RPM~:      0 E:0"
+  ],
+  "lcdClears": 1,
+  "lcdDataWrites": 96,
+  "motorDdr": 7,
+  "motorPortLatch": 0,
+  "observedStackBytes": 348,
+  "status": "PASS",
+  "clockHz": 8000000,
+  "encoderMode": 4,
+  "countsPerRev": 937.2,
+  "nominalCpr": true,
+  "cprNumerator": 9372,
+  "cprDenominator": 10,
+  "rpmSampling": {
+    "injectedPhaseShiftMs": 2,
+    "windowsChecked": 3,
+    "snapshotIntervalsMs": [
+      253,
+      250,
+      250
+    ],
+    "maximumAllowedSnapshotSkewMs": 1
+  },
+  "elfSha256": "f6f95460dee22914e83857867549c07dfb8f293bf1d46dc03f360d37b873e274",
+  "binarySha256": "87591e6245bc849f7135580982b308362b2121d979c428fadb1c773ab9bad31d",
+  "recordedAtUtc": "2026-11-12T09:32:49.924Z"
+}

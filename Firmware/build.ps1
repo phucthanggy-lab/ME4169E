@@ -74,6 +74,17 @@ try {
         $log.Add([string]$line)
     }
     if (-not $effective.ContainsKey('CLOCK_HZ') -or -not $effective.ContainsKey('OUTPUTS')) { throw 'Cannot resolve effective configuration metadata.' }
+    foreach ($required in @('ENCODER_CPR','ENCODER_USE_NOMINAL_CPR','ENCODER_MODE','ENCODER_PPR_REFERENCE','GEAR_RATIO_NUMERATOR','GEAR_RATIO_DENOMINATOR')) {
+        if (-not $effective.ContainsKey($required)) { throw "Configuration metadata requires a numeric literal for $required." }
+    }
+    if ($effective.ENCODER_USE_NOMINAL_CPR -eq 1) {
+        $effective.ENCODER_CPR_NUMERATOR = [uint32]([uint64]$effective.ENCODER_PPR_REFERENCE * $effective.ENCODER_MODE * $effective.GEAR_RATIO_NUMERATOR)
+        $effective.ENCODER_CPR_DENOMINATOR = $effective.GEAR_RATIO_DENOMINATOR
+    } else {
+        $effective.ENCODER_CPR_NUMERATOR = $effective.ENCODER_CPR
+        $effective.ENCODER_CPR_DENOMINATOR = 1
+    }
+    $effective.ENCODER_CPR = [double]$effective.ENCODER_CPR_NUMERATOR / $effective.ENCODER_CPR_DENOMINATOR
     $sources = @(Get-ChildItem -LiteralPath 'Firmware/src' -Filter '*.c' | Where-Object { -not $SelfTest -or $_.Name -ne 'main.c' } | Sort-Object Name | ForEach-Object { 'Firmware/src/' + $_.Name })
     if ($SelfTest) { $sources += '.development/Testing/avr_selftest.c' }
     $objects = @()
@@ -105,7 +116,7 @@ try {
     if ($SelfTest -or $Profile -eq 'Test') { $hashInputs += Get-Item '.development/Testing/synthetic_config.h' }
     $sourceHashes = @($hashInputs | Sort-Object FullName | ForEach-Object { @{ path = $_.FullName.Substring($root.Length + 1).Replace('\','/'); sha256 = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant() } })
     $compilerVersion = (& $compiler --version | Select-Object -First 1)
-    $manifest = @{ version = 'ME4169E-0.2.2'; profile = $Profile; syntheticSelfTest = [bool]$SelfTest; syntheticApplication = [bool]$ApplicationFixture; mcuTarget = 'atmega8'; mcuConfirmationDeclared = ($effective.MCU_CONFIRMED -eq 1 -and $Profile -ne 'Test'); clockConfirmed = ($effective.CLOCK_CONFIRMED -eq 1 -and $Profile -eq 'Release'); startedAtUtc = $started; finishedAtUtc = [DateTime]::UtcNow.ToString('o'); compiler = $compilerVersion; compileFlags = $flags; clockHz = $effective.CLOCK_HZ; motorOutputsLocked = ($effective.OUTPUTS -eq 0); effectiveConfiguration = $effective; flashBytes = $flash; staticSramBytes = $sram; flashLimit = 8192; sramLimit = 1024; sourceFiles = $sourceHashes; artifacts = @{} }
+    $manifest = @{ version = 'ME4169E-0.2.3'; profile = $Profile; syntheticSelfTest = [bool]$SelfTest; syntheticApplication = [bool]$ApplicationFixture; mcuTarget = 'atmega8'; mcuConfirmationDeclared = ($effective.MCU_CONFIRMED -eq 1 -and $Profile -ne 'Test'); clockConfirmed = ($effective.CLOCK_CONFIRMED -eq 1 -and $Profile -eq 'Release'); startedAtUtc = $started; finishedAtUtc = [DateTime]::UtcNow.ToString('o'); compiler = $compilerVersion; compileFlags = $flags; clockHz = $effective.CLOCK_HZ; motorOutputsLocked = ($effective.OUTPUTS -eq 0); effectiveConfiguration = $effective; flashBytes = $flash; staticSramBytes = $sram; flashLimit = 8192; sramLimit = 1024; sourceFiles = $sourceHashes; artifacts = @{} }
     $artifactNames = @('firmware.elf','firmware.bin','firmware.map')
     if (-not $SelfTest -and $Profile -ne 'Test') { $artifactNames += 'firmware.hex' }
     foreach ($artifact in $artifactNames) { $manifest.artifacts[$artifact] = (Get-FileHash -LiteralPath (Join-Path $OutputDirectory $artifact) -Algorithm SHA256).Hash.ToLowerInvariant() }

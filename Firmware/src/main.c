@@ -15,6 +15,11 @@
 #include <limits.h>
 
 volatile uint8_t firmware_reset_cause __attribute__((section(".noinit")));
+#if CFG_ENCODER_USE_NOMINAL_CPR
+#define RPM_PREFIX "RPM~:"
+#else
+#define RPM_PREFIX "RPM:"
+#endif
 void firmware_early_init(void) __attribute__((naked, section(".init3"), used));
 void firmware_early_init(void)
 {
@@ -37,16 +42,16 @@ static void render(int32_t rpm, bool rpm_valid, uint16_t duty, uint8_t encoder_b
     else if (motor_state() == MOTOR_FAULT) { label = "FAULT"; }
     else { label = "STOP"; }
     (void)snprintf(first, sizeof(first), "%-5s SET:%3u.%u", label, duty / 10U, duty % 10U);
-    if (encoder_bad) { (void)snprintf(second, sizeof(second), "RPM: ENC? E:%u", (unsigned)motor_fault()); }
+    if (encoder_bad) { (void)snprintf(second, sizeof(second), RPM_PREFIX " ENC? E:%u", (unsigned)motor_fault()); }
     else if (!rpm_valid) {
-#if CFG_ENCODER_COUNTS_PER_MEASURED_REV == 0
+#if CFG_ENCODER_CPR_NUMERATOR == 0
         (void)snprintf(second, sizeof(second), "C:%10lu E:%u", (unsigned long)count, (unsigned)motor_fault());
 #else
-        (void)snprintf(second, sizeof(second), "RPM: ---- E:%u", (unsigned)motor_fault());
+        (void)snprintf(second, sizeof(second), RPM_PREFIX " ---- E:%u", (unsigned)motor_fault());
 #endif
     }
-    else if (rpm > 999999L || rpm < -99999L) { (void)snprintf(second, sizeof(second), "RPM: OVER RANGE"); }
-    else { (void)snprintf(second, sizeof(second), "RPM:%7ld E:%u", (long)rpm, (unsigned)motor_fault()); }
+    else if (rpm > 999999L || rpm < -99999L) { (void)snprintf(second, sizeof(second), RPM_PREFIX " OVER RANGE"); }
+    else { (void)snprintf(second, sizeof(second), RPM_PREFIX "%7ld E:%u", (long)rpm, (unsigned)motor_fault()); }
     (void)count;
     if (strcmp(first, previous_first) != 0) { lcd_write_line(0U, first); strcpy(previous_first, first); }
     if (strcmp(second, previous_second) != 0) { lcd_write_line(1U, second); strcpy(previous_second, second); }
@@ -109,7 +114,7 @@ int main(void)
             if (sample.overflow) { motor_raise_fault(MOTOR_FAULT_ENCODER); }
             run_event = debounce_update(&run_button, gpio_run_pressed(), now, CFG_DEBOUNCE_MS);
             stop_event = debounce_update(&stop_button, gpio_stop_pressed(), now, CFG_DEBOUNCE_MS);
-#if CFG_ENCODER_COUNTS_PER_MEASURED_REV == 0
+#if CFG_ENCODER_CPR_NUMERATOR == 0
             if (stop_event) { count_origin = sample.position; } /* Zero the calibration display, not the ISR counter. */
 #endif
             if (gpio_stop_pressed() || stop_event) {
@@ -128,7 +133,7 @@ int main(void)
             /* End the RPM interval at the same encoder snapshot that supplied
              * its last counts, even when the cooperative schedule drifts. */
             if ((uint32_t)(now - last_rpm) >= CFG_RPM_SAMPLE_MS) {
-                rpm_valid = !window_bad && control_rpm(accumulated_counts, CFG_ENCODER_COUNTS_PER_MEASURED_REV, (uint32_t)(now - last_rpm), &rpm);
+                rpm_valid = !window_bad && control_rpm(accumulated_counts, CFG_ENCODER_CPR_NUMERATOR, (uint32_t)(now - last_rpm), &rpm, CFG_ENCODER_CPR_DENOMINATOR);
                 displayed_encoder_bad = window_bad ? 1U : 0U;
                 accumulated_counts = 0;
                 window_bad = false;

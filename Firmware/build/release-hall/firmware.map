@@ -16,6 +16,10 @@ c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/a
                               C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o (__umulhisi3)
 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
                               C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o (__muluhisi3)
+c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+                              C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o (__muldi3)
+c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+                              c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o) (__muldi3_6)
 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
                               C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o (__umulsidi3)
 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
@@ -30,8 +34,6 @@ c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/a
                               C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o (__adddi3_s8)
 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
                               C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o (__cmpdi2)
-c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
-                              c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o) (__muldi3_6)
 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strcmp.o)
                               C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o (strcmp)
 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strcpy.o)
@@ -65,7 +67,7 @@ Discarded input sections
  .bss           0x00000000        0x0 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
  .text.control_quadrature
                 0x00000000       0x18 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
- .progmem.data.table.1740
+ .progmem.data.table.1742
                 0x00000000       0x10 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
  .text          0x00000000        0x0 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
  .data          0x00000000        0x0 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
@@ -211,6 +213,34 @@ Discarded input sections
                 0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
  .text.libgcc.fixed
                 0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
+ .text          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .data          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .bss           0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .text.libgcc   0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .text          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .data          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .bss           0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .text.libgcc   0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
  .text          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
  .data          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
  .bss           0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
@@ -312,20 +342,6 @@ Discarded input sections
                 0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
  .text.libgcc.fixed
                 0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
- .text          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .data          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .bss           0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .text.libgcc.div
-                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .text.libgcc   0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .text.libgcc.prologue
-                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .text.libgcc.builtins
-                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .text.libgcc.fmul
-                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .text.libgcc.fixed
-                0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
  .text          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strcmp.o)
  .data          0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strcmp.o)
  .bss           0x00000000        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strcmp.o)
@@ -508,7 +524,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x19ec
+.text           0x00000000     0x1a44
  *(.vectors)
  .vectors       0x00000000       0x26 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4/crtatmega8.o
                 0x00000000                __vector_default
@@ -524,7 +540,7 @@ END GROUP
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
  *(.progmem*)
- .progmem.data.dividers.1724
+ .progmem.data.dividers.1726
                 0x00000026        0xa C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
                 0x00000030                . = ALIGN (0x2)
  *(.jumptables)
@@ -615,170 +631,173 @@ END GROUP
                 0x00000292       0x30 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
                 0x00000292                control_ramp
  .text.control_rpm
-                0x000002c2      0x1d6 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
+                0x000002c2      0x1f4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
                 0x000002c2                control_rpm
  .text.control_pwm_plan
-                0x00000498      0x168 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
-                0x00000498                control_pwm_plan
+                0x000004b6      0x168 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
+                0x000004b6                control_pwm_plan
  .text.record_step
-                0x00000600       0x78 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+                0x0000061e       0x78 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
  .text.encoder_init
-                0x00000678       0x5a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
-                0x00000678                encoder_init
+                0x00000696       0x5a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+                0x00000696                encoder_init
  .text.__vector_1
-                0x000006d2       0x48 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
-                0x000006d2                __vector_1
+                0x000006f0       0x48 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+                0x000006f0                __vector_1
  .text.encoder_snapshot
-                0x0000071a       0x96 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
-                0x0000071a                encoder_snapshot
+                0x00000738       0x96 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+                0x00000738                encoder_snapshot
  .text.gpio_motor_high_z
-                0x000007b0       0x14 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
-                0x000007b0                gpio_motor_high_z
+                0x000007ce       0x14 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
+                0x000007ce                gpio_motor_high_z
  .text.gpio_init
-                0x000007c4       0x1c C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
-                0x000007c4                gpio_init
+                0x000007e2       0x1c C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
+                0x000007e2                gpio_init
  .text.gpio_run_pressed
-                0x000007e0        0xc C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
-                0x000007e0                gpio_run_pressed
+                0x000007fe        0xc C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
+                0x000007fe                gpio_run_pressed
  .text.gpio_stop_pressed
-                0x000007ec        0xe C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
-                0x000007ec                gpio_stop_pressed
+                0x0000080a        0xe C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
+                0x0000080a                gpio_stop_pressed
  .text.gpio_motor_direction
-                0x000007fa       0x24 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
-                0x000007fa                gpio_motor_direction
- .text.nibble   0x0000081e       0x2a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
- .text.send     0x00000848       0x24 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
+                0x00000818       0x24 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
+                0x00000818                gpio_motor_direction
+ .text.nibble   0x0000083c       0x2a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
+ .text.send     0x00000866       0x24 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
  .text.lcd_init
-                0x0000086c       0x88 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
-                0x0000086c                lcd_init
+                0x0000088a       0x88 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
+                0x0000088a                lcd_init
  .text.lcd_write_line
-                0x000008f4       0x4a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
-                0x000008f4                lcd_write_line
+                0x00000912       0x4a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
+                0x00000912                lcd_write_line
  .text.startup.main
-                0x0000093e      0x48c C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
-                0x0000093e                main
+                0x0000095c      0x436 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+                0x0000095c                main
  .text.deactivate
-                0x00000dca        0x6 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00000d92        0x6 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
  .text.motor_outputs_available
-                0x00000dd0        0x6 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
-                0x00000dd0                motor_outputs_available
+                0x00000d98        0x6 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00000d98                motor_outputs_available
  .text.motor_state
-                0x00000dd6        0xa C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
-                0x00000dd6                motor_state
+                0x00000d9e        0xa C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00000d9e                motor_state
  .text.motor_fault
-                0x00000de0        0xa C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
-                0x00000de0                motor_fault
+                0x00000da8        0xa C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00000da8                motor_fault
  .text.motor_init
-                0x00000dea       0x30 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
-                0x00000dea                motor_init
+                0x00000db2       0x30 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00000db2                motor_init
  .text.motor_raise_fault
-                0x00000e1a       0x2e C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
-                0x00000e1a                motor_raise_fault
+                0x00000de2       0x2e C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00000de2                motor_raise_fault
  .text.motor_stop
-                0x00000e48       0x3c C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
-                0x00000e48                motor_stop
+                0x00000e10       0x3c C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00000e10                motor_stop
  .text.motor_request
-                0x00000e84       0xc2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
-                0x00000e84                motor_request
+                0x00000e4c       0xc2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00000e4c                motor_request
  .text.motor_task
-                0x00000f46       0xaa C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
-                0x00000f46                motor_task
+                0x00000f0e       0xaa C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00000f0e                motor_task
  .text.pwm_disable
-                0x00000ff0       0x1a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
-                0x00000ff0                pwm_disable
+                0x00000fb8       0x1a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+                0x00000fb8                pwm_disable
  .text.pwm_init
-                0x0000100a       0xac C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
-                0x0000100a                pwm_init
+                0x00000fd2       0xac C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+                0x00000fd2                pwm_init
  .text.pwm_apply
-                0x000010b6       0xb0 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
-                0x000010b6                pwm_apply
+                0x0000107e       0xb0 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+                0x0000107e                pwm_apply
  .text.pwm_duty
-                0x00001166        0xa C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
-                0x00001166                pwm_duty
+                0x0000112e        0xa C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+                0x0000112e                pwm_duty
  .text.timer_init
-                0x00001170       0x2e C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
-                0x00001170                timer_init
+                0x00001138       0x2e C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+                0x00001138                timer_init
  .text.__vector_3
-                0x0000119e       0x4a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
-                0x0000119e                __vector_3
+                0x00001166       0x4a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+                0x00001166                __vector_3
  .text.timer_millis
-                0x000011e8       0x18 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
-                0x000011e8                timer_millis
+                0x000011b0       0x18 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+                0x000011b0                timer_millis
  .text.libgcc.mul
-                0x00001200       0x1e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_mulsi3.o)
-                0x00001200                __mulsi3
+                0x000011c8       0x1e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_mulsi3.o)
+                0x000011c8                __mulsi3
  .text.libgcc.div
-                0x0000121e       0x28 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodhi4.o)
-                0x0000121e                __udivmodhi4
+                0x000011e6       0x28 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodhi4.o)
+                0x000011e6                __udivmodhi4
  .text.libgcc.div
-                0x00001246       0x44 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodsi4.o)
-                0x00001246                __udivmodsi4
+                0x0000120e       0x44 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodsi4.o)
+                0x0000120e                __udivmodsi4
  .text.libgcc.mul
-                0x0000128a       0x18 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulhisi3.o)
-                0x0000128a                __umulhisi3
+                0x00001252       0x18 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulhisi3.o)
+                0x00001252                __umulhisi3
  .text.libgcc.mul
-                0x000012a2       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
-                0x000012a2                __muluhisi3
+                0x0000126a       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
+                0x0000126a                __muluhisi3
  .text.libgcc.mul
-                0x000012b6       0x4e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
-                0x000012b6                __umulsidi3
-                0x000012b8                __umulsidi3_helper
+                0x0000127e       0x90 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+                0x0000127e                __muldi3
+ .text.libgcc.mul
+                0x0000130e       0x10 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+                0x0000130e                __muldi3_6
+ .text.libgcc.mul
+                0x0000131e       0x4e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
+                0x0000131e                __umulsidi3
+                0x00001320                __umulsidi3_helper
  .text.libgcc.div
-                0x00001304       0x1a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
-                0x00001304                __umoddi3
-                0x00001308                __udivdi3
-                0x0000130a                __udivdi3_umoddi3
+                0x0000136c       0x1a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
+                0x0000136c                __umoddi3
+                0x00001370                __udivdi3
+                0x00001372                __udivdi3_umoddi3
  .text.libgcc.div
-                0x0000131e       0x7e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
-                0x0000131e                __udivmod64
+                0x00001386       0x7e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
+                0x00001386                __udivmod64
  .text.libgcc.builtins
-                0x0000139c       0x3a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
-                0x0000139c                __ashrdi3
-                0x000013a0                __lshrdi3
- .text.libgcc   0x000013d6       0x12 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
-                0x000013d6                __adddi3
- .text.libgcc   0x000013e8       0x18 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
-                0x000013e8                __adddi3_s8
- .text.libgcc   0x00001400       0x12 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
-                0x00001400                __cmpdi2
- .text.libgcc.mul
-                0x00001412       0x10 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
-                0x00001412                __muldi3_6
+                0x00001404       0x3a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
+                0x00001404                __ashrdi3
+                0x00001408                __lshrdi3
+ .text.libgcc   0x0000143e       0x12 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
+                0x0000143e                __adddi3
+ .text.libgcc   0x00001450       0x18 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
+                0x00001450                __adddi3_s8
+ .text.libgcc   0x00001468       0x12 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
+                0x00001468                __cmpdi2
  .text.avr-libc
-                0x00001422       0x12 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strcmp.o)
-                0x00001422                strcmp
+                0x0000147a       0x12 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strcmp.o)
+                0x0000147a                strcmp
  .text.avr-libc
-                0x00001434        0xe c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strcpy.o)
-                0x00001434                strcpy
+                0x0000148c        0xe c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strcpy.o)
+                0x0000148c                strcpy
  .text.avr-libc
-                0x00001442       0x5a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(snprintf.o)
-                0x00001442                snprintf
+                0x0000149a       0x5a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(snprintf.o)
+                0x0000149a                snprintf
  .text.avr-libc
-                0x0000149c      0x396 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(vfprintf_std.o)
-                0x0000149c                vfprintf
+                0x000014f4      0x396 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(vfprintf_std.o)
+                0x000014f4                vfprintf
  .text.avr-libc
-                0x00001832       0x16 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strnlen_P.o)
-                0x00001832                strnlen_P
+                0x0000188a       0x16 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strnlen_P.o)
+                0x0000188a                strnlen_P
  .text.avr-libc
-                0x00001848       0x16 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strnlen.o)
-                0x00001848                strnlen
+                0x000018a0       0x16 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(strnlen.o)
+                0x000018a0                strnlen
  .text.avr-libc
-                0x0000185e       0x60 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(fputc.o)
-                0x0000185e                fputc
+                0x000018b6       0x60 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(fputc.o)
+                0x000018b6                fputc
  .text.avr-libc
-                0x000018be       0xbc c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(ultoa_invert.o)
-                0x000018be                __ultoa_invert
+                0x00001916       0xbc c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4\libc.a(ultoa_invert.o)
+                0x00001916                __ultoa_invert
  .text.libgcc.prologue
-                0x0000197a       0x38 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
-                0x0000197a                __prologue_saves__
+                0x000019d2       0x38 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
+                0x000019d2                __prologue_saves__
  .text.libgcc.prologue
-                0x000019b2       0x36 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
-                0x000019b2                __epilogue_restores__
-                0x000019e8                . = ALIGN (0x2)
+                0x00001a0a       0x36 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
+                0x00001a0a                __epilogue_restores__
+                0x00001a40                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000019e8        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
-                0x000019e8                _exit
-                0x000019e8                exit
+ .fini9         0x00001a40        0x0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
+                0x00001a40                _exit
+                0x00001a40                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -797,11 +816,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000019e8        0x4 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
+ .fini0         0x00001a40        0x4 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
  *(.fini0)
-                0x000019ec                _etext = .
+                0x00001a44                _etext = .
 
-.data           0x00800060       0x98 load address 0x000019ec
+.data           0x00800060       0x9e load address 0x00001a44
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -809,72 +828,72 @@ END GROUP
  *(.rodata)
  *(.rodata*)
  .rodata.main.str1.1
-                0x00800060       0x97 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+                0x00800060       0x9d C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
  *(.gnu.linkonce.r*)
-                0x008000f8                . = ALIGN (0x2)
- *fill*         0x008000f7        0x1 
-                0x008000f8                _edata = .
-                0x008000f8                PROVIDE (__data_end, .)
+                0x008000fe                . = ALIGN (0x2)
+ *fill*         0x008000fd        0x1 
+                0x008000fe                _edata = .
+                0x008000fe                PROVIDE (__data_end, .)
 
-.bss            0x008000f8       0x55
-                0x008000f8                PROVIDE (__bss_start, .)
+.bss            0x008000fe       0x55
+                0x008000fe                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.pending   0x008000f8        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
+ .bss.pending   0x008000fe        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
  .bss.discard_first
-                0x008000f9        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
- .bss.valid     0x008000fa        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
+                0x008000ff        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
+ .bss.valid     0x00800100        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
  .bss.last_valid
-                0x008000fb        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
+                0x00800101        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
  .bss.last_start
-                0x008000ff        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
+                0x00800105        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
  .bss.accumulator
-                0x00800103        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
- .bss.filtered  0x00800105        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
- .bss.previous  0x00800107        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+                0x00800109        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
+ .bss.filtered  0x0080010b        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
+ .bss.previous  0x0080010d        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
  .bss.bad_transition
-                0x00800108        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
- .bss.moved     0x00800109        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+                0x0080010e        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+ .bss.moved     0x0080010f        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
  .bss.overflowed
-                0x0080010a        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+                0x00800110        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
  .bss.invalid_edges
-                0x0080010b        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+                0x00800111        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
  .bss.window_delta
-                0x0080010d        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
- .bss.position  0x00800111        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
- .bss.previous_second.1982
-                0x00800115       0x11 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
- .bss.previous_first.1981
-                0x00800126       0x11 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+                0x00800113        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+ .bss.position  0x00800117        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+ .bss.previous_second.1983
+                0x0080011b       0x11 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+ .bss.previous_first.1982
+                0x0080012c       0x11 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
  .bss.outputs_ready
-                0x00800137        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x0080013d        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
  .bss.last_service
-                0x00800138        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x0080013e        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
  .bss.last_direction
-                0x0080013c        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
- .bss.fault     0x0080013e        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
- .bss.state     0x00800140        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+                0x00800142        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+ .bss.fault     0x00800144        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+ .bss.state     0x00800146        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
  .bss.applied_duty
-                0x00800142        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
- .bss.divider   0x00800144        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+                0x00800148        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+ .bss.divider   0x0080014a        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
  .bss.configured_top
-                0x00800146        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+                0x0080014c        0x2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
  .bss.configured
-                0x00800148        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+                0x0080014e        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
  .bss.milliseconds
-                0x00800149        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+                0x0080014f        0x4 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
  *(COMMON)
-                0x0080014d                PROVIDE (__bss_end, .)
-                0x000019ec                __data_load_start = LOADADDR (.data)
-                0x00001a84                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800153                PROVIDE (__bss_end, .)
+                0x00001a44                __data_load_start = LOADADDR (.data)
+                0x00001ae2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080014d        0x1
+.noinit         0x00800153        0x1
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
- .noinit        0x0080014d        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
-                0x0080014d                firmware_reset_cause
+ .noinit        0x00800153        0x1 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+                0x00800153                firmware_reset_cause
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080014e                _end = .
+                0x00800154                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -950,7 +969,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x480
+.debug_aranges  0x00000000      0x4a0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x38 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
@@ -987,61 +1006,64 @@ END GROUP
  .debug_aranges
                 0x00000320       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
  .debug_aranges
-                0x00000340       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
+                0x00000340       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
  .debug_aranges
-                0x00000360       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
+                0x00000360       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
  .debug_aranges
-                0x00000380       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
+                0x00000380       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
  .debug_aranges
-                0x000003a0       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
+                0x000003a0       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
  .debug_aranges
-                0x000003c0       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
+                0x000003c0       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
  .debug_aranges
-                0x000003e0       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
+                0x000003e0       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
  .debug_aranges
-                0x00000400       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
+                0x00000400       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
  .debug_aranges
-                0x00000420       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+                0x00000420       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
  .debug_aranges
-                0x00000440       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
+                0x00000440       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
  .debug_aranges
-                0x00000460       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
+                0x00000460       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
+ .debug_aranges
+                0x00000480       0x20 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x36b8
+.debug_info     0x00000000     0x379a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x48c c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4/crtatmega8.o
  .debug_info    0x0000048c      0x1ad C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
- .debug_info    0x00000639      0x449 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
- .debug_info    0x00000a82      0x31e C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
- .debug_info    0x00000da0      0x20f C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
- .debug_info    0x00000faf      0x548 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
- .debug_info    0x000014f7      0xb0f C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
- .debug_info    0x00002006      0x420 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
- .debug_info    0x00002426      0x3f7 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
- .debug_info    0x0000281d      0x175 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
- .debug_info    0x00002992       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_mulsi3.o)
- .debug_info    0x00002a4d       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodhi4.o)
- .debug_info    0x00002b08       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodsi4.o)
- .debug_info    0x00002bc3       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
- .debug_info    0x00002c7e       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_copy_data.o)
- .debug_info    0x00002d39       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_clear_bss.o)
- .debug_info    0x00002df4       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulhisi3.o)
- .debug_info    0x00002eaf       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
- .debug_info    0x00002f6a       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
- .debug_info    0x00003025       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
- .debug_info    0x000030e0       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
- .debug_info    0x0000319b       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
- .debug_info    0x00003256       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
- .debug_info    0x00003311       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
- .debug_info    0x000033cc       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
- .debug_info    0x00003487       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .debug_info    0x00003542       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
- .debug_info    0x000035fd       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
+ .debug_info    0x00000639      0x458 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
+ .debug_info    0x00000a91      0x31e C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+ .debug_info    0x00000daf      0x20f C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
+ .debug_info    0x00000fbe      0x548 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
+ .debug_info    0x00001506      0xb27 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+ .debug_info    0x0000202d      0x420 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+ .debug_info    0x0000244d      0x3f7 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+ .debug_info    0x00002844      0x175 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+ .debug_info    0x000029b9       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_mulsi3.o)
+ .debug_info    0x00002a74       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodhi4.o)
+ .debug_info    0x00002b2f       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodsi4.o)
+ .debug_info    0x00002bea       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
+ .debug_info    0x00002ca5       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_copy_data.o)
+ .debug_info    0x00002d60       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_clear_bss.o)
+ .debug_info    0x00002e1b       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulhisi3.o)
+ .debug_info    0x00002ed6       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
+ .debug_info    0x00002f91       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .debug_info    0x0000304c       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .debug_info    0x00003107       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
+ .debug_info    0x000031c2       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
+ .debug_info    0x0000327d       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
+ .debug_info    0x00003338       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
+ .debug_info    0x000033f3       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
+ .debug_info    0x000034ae       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
+ .debug_info    0x00003569       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
+ .debug_info    0x00003624       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
+ .debug_info    0x000036df       0xbb c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
 
-.debug_abbrev   0x00000000     0x136d
+.debug_abbrev   0x00000000     0x1397
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x44e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4/crtatmega8.o
  .debug_abbrev  0x0000044e       0xd5 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
@@ -1049,59 +1071,61 @@ END GROUP
  .debug_abbrev  0x00000676      0x193 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
  .debug_abbrev  0x00000809      0x11d C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
  .debug_abbrev  0x00000926      0x1c0 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
- .debug_abbrev  0x00000ae6      0x2bc C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
- .debug_abbrev  0x00000da2      0x18a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
- .debug_abbrev  0x00000f2c      0x1c0 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
- .debug_abbrev  0x000010ec      0x119 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
- .debug_abbrev  0x00001205       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_mulsi3.o)
- .debug_abbrev  0x00001219       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodhi4.o)
- .debug_abbrev  0x0000122d       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodsi4.o)
- .debug_abbrev  0x00001241       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
- .debug_abbrev  0x00001255       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_copy_data.o)
- .debug_abbrev  0x00001269       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_clear_bss.o)
- .debug_abbrev  0x0000127d       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulhisi3.o)
- .debug_abbrev  0x00001291       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
- .debug_abbrev  0x000012a5       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
- .debug_abbrev  0x000012b9       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
- .debug_abbrev  0x000012cd       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
- .debug_abbrev  0x000012e1       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
- .debug_abbrev  0x000012f5       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
- .debug_abbrev  0x00001309       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
- .debug_abbrev  0x0000131d       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
- .debug_abbrev  0x00001331       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .debug_abbrev  0x00001345       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
- .debug_abbrev  0x00001359       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
+ .debug_abbrev  0x00000ae6      0x2d2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+ .debug_abbrev  0x00000db8      0x18a C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+ .debug_abbrev  0x00000f42      0x1c0 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+ .debug_abbrev  0x00001102      0x119 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+ .debug_abbrev  0x0000121b       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_mulsi3.o)
+ .debug_abbrev  0x0000122f       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodhi4.o)
+ .debug_abbrev  0x00001243       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodsi4.o)
+ .debug_abbrev  0x00001257       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
+ .debug_abbrev  0x0000126b       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_copy_data.o)
+ .debug_abbrev  0x0000127f       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_clear_bss.o)
+ .debug_abbrev  0x00001293       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulhisi3.o)
+ .debug_abbrev  0x000012a7       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
+ .debug_abbrev  0x000012bb       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .debug_abbrev  0x000012cf       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .debug_abbrev  0x000012e3       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
+ .debug_abbrev  0x000012f7       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x0000130b       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
+ .debug_abbrev  0x0000131f       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
+ .debug_abbrev  0x00001333       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
+ .debug_abbrev  0x00001347       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
+ .debug_abbrev  0x0000135b       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
+ .debug_abbrev  0x0000136f       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
+ .debug_abbrev  0x00001383       0x14 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
 
-.debug_line     0x00000000     0x2434
+.debug_line     0x00000000     0x2586
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000       0x1a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4/crtatmega8.o
  .debug_line    0x0000001a      0x1bd C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
- .debug_line    0x000001d7      0x2c2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
- .debug_line    0x00000499      0x253 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
- .debug_line    0x000006ec      0x1ee C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
- .debug_line    0x000008da      0x280 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
- .debug_line    0x00000b5a      0x46e C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
- .debug_line    0x00000fc8      0x301 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
- .debug_line    0x000012c9      0x306 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
- .debug_line    0x000015cf      0x169 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
- .debug_line    0x00001738       0xb0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_mulsi3.o)
- .debug_line    0x000017e8       0xce c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodhi4.o)
- .debug_line    0x000018b6      0x122 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodsi4.o)
- .debug_line    0x000019d8       0x62 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
- .debug_line    0x00001a3a       0x98 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_copy_data.o)
- .debug_line    0x00001ad2       0x86 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_clear_bss.o)
- .debug_line    0x00001b58       0x9e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulhisi3.o)
- .debug_line    0x00001bf6       0x92 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
- .debug_line    0x00001c88      0x110 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
- .debug_line    0x00001d98       0xa4 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
- .debug_line    0x00001e3c      0x12e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
- .debug_line    0x00001f6a      0x104 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
- .debug_line    0x0000206e       0x68 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
- .debug_line    0x000020d6       0x7a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
- .debug_line    0x00002150       0x68 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
- .debug_line    0x000021b8       0x86 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
- .debug_line    0x0000223e       0xfe c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
- .debug_line    0x0000233c       0xf8 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
+ .debug_line    0x000001d7      0x2cc C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
+ .debug_line    0x000004a3      0x253 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+ .debug_line    0x000006f6      0x1ee C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
+ .debug_line    0x000008e4      0x280 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
+ .debug_line    0x00000b64      0x446 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+ .debug_line    0x00000faa      0x301 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+ .debug_line    0x000012ab      0x306 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+ .debug_line    0x000015b1      0x169 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+ .debug_line    0x0000171a       0xb0 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_mulsi3.o)
+ .debug_line    0x000017ca       0xce c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodhi4.o)
+ .debug_line    0x00001898      0x122 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmodsi4.o)
+ .debug_line    0x000019ba       0x62 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_exit.o)
+ .debug_line    0x00001a1c       0x98 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_copy_data.o)
+ .debug_line    0x00001ab4       0x86 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_clear_bss.o)
+ .debug_line    0x00001b3a       0x9e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulhisi3.o)
+ .debug_line    0x00001bd8       0x92 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muluhisi3.o)
+ .debug_line    0x00001c6a      0x170 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3.o)
+ .debug_line    0x00001dda       0x86 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_muldi3_6.o)
+ .debug_line    0x00001e60      0x110 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_umulsidi3.o)
+ .debug_line    0x00001f70       0xa4 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivdi3.o)
+ .debug_line    0x00002014      0x12e c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_udivmod64.o)
+ .debug_line    0x00002142      0x104 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_ashrdi3.o)
+ .debug_line    0x00002246       0x68 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3.o)
+ .debug_line    0x000022ae       0x7a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_adddi3_s8.o)
+ .debug_line    0x00002328       0x68 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_cmpdi2.o)
+ .debug_line    0x00002390       0xfe c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_prologue.o)
+ .debug_line    0x0000248e       0xf8 c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/avr4\libgcc.a(_epilogue.o)
 
 .debug_frame    0x00000000      0x5dc
  *(.debug_frame)
@@ -1115,39 +1139,39 @@ END GROUP
  .debug_frame   0x000004cc       0xac C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
  .debug_frame   0x00000578       0x64 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
 
-.debug_str      0x00000000      0xb33
+.debug_str      0x00000000      0xb39
  *(.debug_str)
  .debug_str     0x00000000      0x17a c:/users/admin/vscode/worktree/me4169e/.tools/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr4/crtatmega8.o
  .debug_str     0x0000017a      0x15d C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
                                 0x197 (size before relaxing)
- .debug_str     0x000002d7      0x15f C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
-                                0x2b7 (size before relaxing)
- .debug_str     0x00000436      0x10d C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+ .debug_str     0x000002d7      0x165 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
+                                0x2c9 (size before relaxing)
+ .debug_str     0x0000043c      0x10d C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
                                 0x25f (size before relaxing)
- .debug_str     0x00000543       0x7b C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
+ .debug_str     0x00000549       0x7b C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
                                 0x1b3 (size before relaxing)
- .debug_str     0x000005be       0x9d C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
+ .debug_str     0x000005c4       0x9d C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
                                 0x1bb (size before relaxing)
- .debug_str     0x0000065b      0x335 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+ .debug_str     0x00000661      0x335 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
                                 0x5b8 (size before relaxing)
- .debug_str     0x00000990       0xee C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+ .debug_str     0x00000996       0xee C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
                                 0x3c9 (size before relaxing)
- .debug_str     0x00000a7e       0x88 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+ .debug_str     0x00000a84       0x88 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
                                 0x217 (size before relaxing)
- .debug_str     0x00000b06       0x2d C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+ .debug_str     0x00000b0c       0x2d C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
                                 0x17f (size before relaxing)
 
-.debug_loc      0x00000000     0x204f
+.debug_loc      0x00000000     0x1f4b
  *(.debug_loc)
  .debug_loc     0x00000000      0x114 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
- .debug_loc     0x00000114      0x921 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
- .debug_loc     0x00000a35      0x2d9 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
- .debug_loc     0x00000d0e       0xde C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
- .debug_loc     0x00000dec      0x4e8 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
- .debug_loc     0x000012d4      0x5b3 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
- .debug_loc     0x00001887      0x460 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
- .debug_loc     0x00001ce7      0x2d2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
- .debug_loc     0x00001fb9       0x96 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+ .debug_loc     0x00000114      0x8a0 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
+ .debug_loc     0x000009b4      0x2d9 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
+ .debug_loc     0x00000c8d       0xde C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
+ .debug_loc     0x00000d6b      0x4e8 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
+ .debug_loc     0x00001253      0x530 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+ .debug_loc     0x00001783      0x460 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+ .debug_loc     0x00001be3      0x2d2 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+ .debug_loc     0x00001eb5       0x96 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -1167,17 +1191,17 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x2b0
+.debug_ranges   0x00000000      0x2a8
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x40 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\adc.o
  .debug_ranges  0x00000040       0x40 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\control.o
  .debug_ranges  0x00000080       0x30 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\encoder.o
  .debug_ranges  0x000000b0       0x30 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\gpio.o
  .debug_ranges  0x000000e0       0x40 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\lcd.o
- .debug_ranges  0x00000120       0x88 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
- .debug_ranges  0x000001a8       0x50 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
- .debug_ranges  0x000001f8       0x98 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
- .debug_ranges  0x00000290       0x20 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
+ .debug_ranges  0x00000120       0x80 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\main.o
+ .debug_ranges  0x000001a0       0x50 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\motor.o
+ .debug_ranges  0x000001f0       0x98 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\pwm.o
+ .debug_ranges  0x00000288       0x20 C:\Users\ADMIN\vscode\worktree\ME4169E\.build\objects\5F09691F094B\timer.o
 
 .debug_macro
  *(.debug_macro)

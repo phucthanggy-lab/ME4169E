@@ -1,10 +1,10 @@
 {
     "motorOutputsLocked":  false,
-    "finishedAtUtc":  "2026-11-12T08:45:46.3559552Z",
-    "version":  "ME4169E-0.2.2",
+    "finishedAtUtc":  "2026-11-12T09:32:59.6614524Z",
+    "version":  "ME4169E-0.2.3",
     "sourceFiles":  [
                         {
-                            "sha256":  "643b59923034285e32ad38be5b7b85ac98b42575eddb8decbb1f3ab7da59bc39",
+                            "sha256":  "f86f94a4ce6591e08a511c0772ed23c015d165f9df2ebddbb80f6e56ab6c7fed",
                             "path":  "Firmware/build.ps1"
                         },
                         {
@@ -12,11 +12,11 @@
                             "path":  "Firmware/include/adc.h"
                         },
                         {
-                            "sha256":  "cb1deb50da9efdffb920d12086fdabca4b6a7b5b9e602dc4077830e02f7f3722",
+                            "sha256":  "d9cda6187b924d4a78d9c5e1db4a55bec96c663179a957def17a303d53a804d1",
                             "path":  "Firmware/include/config.h"
                         },
                         {
-                            "sha256":  "0e31c877c7730455c13f94d4dace58af132b2ae37da610aa9eead46c263c4a8c",
+                            "sha256":  "8fe17e724945e108b9eb2d05d78ea025f05856d8651403ecb4c9c324320d84ed",
                             "path":  "Firmware/include/control.h"
                         },
                         {
@@ -52,7 +52,7 @@
                             "path":  "Firmware/src/adc.c"
                         },
                         {
-                            "sha256":  "5abb32314573b04c48599d2473be372f4a69b088dca60f6eda29a73c2cd7632b",
+                            "sha256":  "ff916b5a8638c3882fa1b3328eb04167a11fc8a0c86c97c173b2574bda36648e",
                             "path":  "Firmware/src/control.c"
                         },
                         {
@@ -68,7 +68,7 @@
                             "path":  "Firmware/src/lcd.c"
                         },
                         {
-                            "sha256":  "600c96edead9bcbfda9553a2266a902794c7bb75f69de737fd13a8deccda0e89",
+                            "sha256":  "af28ea086526124bfc70ae8aaa46e54bd78b899c0a2120ff461e2fd98801956f",
                             "path":  "Firmware/src/main.c"
                         },
                         {
@@ -84,7 +84,7 @@
                             "path":  "Firmware/src/timer.c"
                         },
                         {
-                            "sha256":  "29b896f706fc233eac564e6d2ff298aedb60282e2c96c1e620e24facb8eba7f5",
+                            "sha256":  "cc5b202cf590e20e223270f3bd3744aeedae070b5bd445bc7273a8dc5e034eeb",
                             "path":  "Firmware/tools/config-probe.c"
                         },
                         {
@@ -97,38 +97,41 @@
                         }
                     ],
     "flashLimit":  8192,
-    "flashBytes":  6788,
+    "flashBytes":  6882,
     "artifacts":  {
-                      "firmware.map":  "4d234c006f9eb0c77958e6c1938a2a252432a8c5b56fff1bce0c9f82b89369b5",
-                      "firmware.bin":  "242788b956137bebcbf3e39319987bf0e89cf803399c6dce36690e249d26b85b",
-                      "firmware.elf":  "e67fcc1faaa413d35e7dffdcbe495544b310407eb26b778162fac22b8a5bcc2b",
-                      "firmware.hex":  "21aa29332204e93c284720583e2a8c7efffde895b52d8675057b35b3c791f2e9"
+                      "firmware.map":  "eb88be6d37236ee16e90fe1e2481c63de73de9e10b811d7d55a3559c2dbd7250",
+                      "firmware.bin":  "f6bab40753bb42c3cb8c090e2e9018541c26a5026ee1a354c22348254b64c8a1",
+                      "firmware.elf":  "9805e6d3f12682ad5e32e1c9362f4563e0d3adbf8bd7eaab5a8470c05a69f48d",
+                      "firmware.hex":  "b24658429067c2473bb3fc6035b022ce0be85ace8939f9e69ce87eaa244e7ef6"
                   },
-    "staticSramBytes":  238,
+    "staticSramBytes":  244,
     "clockHz":  8000000,
     "mcuTarget":  "atmega8",
     "mcuConfirmationDeclared":  true,
     "profile":  "Release",
     "effectiveConfiguration":  {
                                    "MCU_CONFIRMED":  1,
+                                   "ENCODER_LOGIC_MV":  5000,
                                    "L298_BRIDGE":  2,
                                    "MOTOR_NOMINAL_RPM":  280,
                                    "ENCODER_MODE":  1,
-                                   "ENCODER_LOGIC_MV":  5000,
+                                   "ENCODER_USE_NOMINAL_CPR":  1,
                                    "CLOCK_HZ":  8000000,
                                    "PWM_HZ":  10000,
                                    "OUTPUTS":  1,
                                    "ENCODER_REVERSED":  0,
                                    "SUPPLY_MV":  12000,
-                                   "ENCODER_CPR":  0,
+                                   "ENCODER_CPR":  234.3,
                                    "CLOCK_CONFIRMED":  1,
+                                   "ENCODER_CPR_NUMERATOR":  2343,
                                    "DUTY_LIMIT":  1000,
                                    "GEAR_RATIO_NUMERATOR":  213,
                                    "GEAR_RATIO_DENOMINATOR":  10,
                                    "RESET_TEST_CONFIRMED":  0,
-                                   "ENCODER_PPR_REFERENCE":  11
+                                   "ENCODER_PPR_REFERENCE":  11,
+                                   "ENCODER_CPR_DENOMINATOR":  10
                                },
-    "startedAtUtc":  "2026-11-12T08:45:44.5459099Z",
+    "startedAtUtc":  "2026-11-12T09:32:58.5016996Z",
     "compiler":  "avr-gcc.exe (GCC) 7.3.0",
     "sramLimit":  1024,
     "compileFlags":  [

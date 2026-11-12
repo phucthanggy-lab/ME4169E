@@ -57,14 +57,21 @@
 #define CFG_MOTOR_DUTY_LIMIT_PERMILLE 1000U
 #endif
 #ifndef CFG_ENCODER_PPR
-/* Seller reference: 11 cycles per encoder/motor-shaft revolution.
- * Not a measured output-shaft CPR and never substituted for calibration. */
+/* Seller reference: 11 cycles per channel per motor-shaft revolution. */
 #define CFG_ENCODER_PPR 11UL
 #endif
-/* Counts per measured shaft revolution in the selected mode, after gearing.
- * Quadrature counts x4 edges; Hall mode counts rising edges x1. Calibrate each separately. */
+/* An explicit integer override selects measured CPR (0 selects raw counts).
+ * Without an override, Release uses the seller's nominal encoder/gear ratio.
+ * Development/Test retain raw counts unless given an explicit override. */
 #ifndef CFG_ENCODER_COUNTS_PER_MEASURED_REV
 #define CFG_ENCODER_COUNTS_PER_MEASURED_REV 0UL
+#if FW_PROFILE == FW_PROFILE_RELEASE
+#define CFG_ENCODER_USE_NOMINAL_CPR 1
+#else
+#define CFG_ENCODER_USE_NOMINAL_CPR 0
+#endif
+#else
+#define CFG_ENCODER_USE_NOMINAL_CPR 0
 #endif
 #define CFG_ENCODER_QUADRATURE_X4 4U
 #define CFG_ENCODER_HALL_RISING 1U
@@ -87,9 +94,22 @@
 #define CFG_ENCODER_DECODE_MULTIPLIER CFG_ENCODER_MODE
 #define CFG_ENCODER_LOGIC_MV 5000U
 /* Seller's nominal 21.3:1 gearbox for the selected 280 rpm variant.
- * Reference only: the actual gear ratio/count convention must be calibrated. */
+ * Nominal CPR is an estimate, not a measurement of the received motor. */
 #define CFG_GEAR_RATIO_NUMERATOR 213UL
 #define CFG_GEAR_RATIO_DENOMINATOR 10UL
+#if CFG_ENCODER_USE_NOMINAL_CPR
+#define CFG_ENCODER_CPR_NUMERATOR (CFG_ENCODER_PPR * CFG_ENCODER_DECODE_MULTIPLIER * CFG_GEAR_RATIO_NUMERATOR)
+#define CFG_ENCODER_CPR_DENOMINATOR CFG_GEAR_RATIO_DENOMINATOR
+#else
+#define CFG_ENCODER_CPR_NUMERATOR CFG_ENCODER_COUNTS_PER_MEASURED_REV
+#define CFG_ENCODER_CPR_DENOMINATOR 1U
+#endif
+#if CFG_ENCODER_CPR_NUMERATOR > 4294967295UL || CFG_ENCODER_CPR_DENOMINATOR == 0 || CFG_ENCODER_CPR_DENOMINATOR > 65535UL
+#error "Encoder CPR requires a uint32 numerator and a nonzero uint16 denominator"
+#endif
+#if CFG_ENCODER_USE_NOMINAL_CPR && CFG_ENCODER_CPR_NUMERATOR == 0
+#error "Nominal encoder CPR must be nonzero"
+#endif
 #ifndef CFG_REVERSAL_SAFETY_CONFIRMED
 #define CFG_REVERSAL_SAFETY_CONFIRMED 0
 #endif

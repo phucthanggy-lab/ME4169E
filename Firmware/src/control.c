@@ -35,17 +35,18 @@ uint16_t control_ramp(uint16_t actual, uint16_t target, uint16_t step)
     return (uint16_t)(actual - target) <= step ? target : (uint16_t)(actual - step);
 }
 
-bool control_rpm(int32_t counts, uint32_t counted_cpr, uint32_t elapsed_ms, int32_t *rpm)
+bool control_rpm(int32_t counts, uint32_t cpr_numerator, uint32_t elapsed_ms, int32_t *rpm, uint16_t cpr_denominator)
 {
     uint32_t magnitude;
     uint64_t denominator;
     uint64_t result;
-    if (counted_cpr == 0UL || elapsed_ms == 0UL || rpm == 0) { return false; }
+    if (cpr_numerator == 0UL || cpr_denominator == 0U || elapsed_ms == 0UL || rpm == 0) { return false; }
     magnitude = counts < 0 ? 0UL - (uint32_t)counts : (uint32_t)counts;
-    denominator = (uint64_t)counted_cpr * elapsed_ms;
-    /* Max numerator ~1.29e14. Avoid adding denominator/2, which can overflow for
+    denominator = (uint64_t)cpr_numerator * elapsed_ms;
+    /* Max numerator < 8.45e18 (INT32_MIN magnitude * 60000 * UINT16_MAX).
+     * Avoid adding denominator/2, which can overflow for
      * arbitrary 32-bit input products: quotient/remainder rounding is bounded. */
-    result = (uint64_t)magnitude * 60000UL;
+    result = (uint64_t)magnitude * 60000UL * cpr_denominator;
     {
         uint64_t quotient = result / denominator;
         uint64_t remainder = result % denominator;
