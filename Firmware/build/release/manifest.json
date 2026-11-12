@@ -1,10 +1,10 @@
 {
     "motorOutputsLocked":  false,
-    "finishedAtUtc":  "2026-11-11T10:03:09.7016900Z",
-    "version":  "ME4169E-0.2.1",
+    "finishedAtUtc":  "2026-11-12T08:45:34.0879653Z",
+    "version":  "ME4169E-0.2.2",
     "sourceFiles":  [
                         {
-                            "sha256":  "fd613cbed8e2db1c329aa0b0e293ac91c27c5e45d78f0cf09e9e5b57fdfc003d",
+                            "sha256":  "643b59923034285e32ad38be5b7b85ac98b42575eddb8decbb1f3ab7da59bc39",
                             "path":  "Firmware/build.ps1"
                         },
                         {
@@ -12,7 +12,7 @@
                             "path":  "Firmware/include/adc.h"
                         },
                         {
-                            "sha256":  "ef27118991194d5ea59ff0ee13cca785a783d3101d9bc93debae5d1339997791",
+                            "sha256":  "cb1deb50da9efdffb920d12086fdabca4b6a7b5b9e602dc4077830e02f7f3722",
                             "path":  "Firmware/include/config.h"
                         },
                         {
@@ -84,7 +84,7 @@
                             "path":  "Firmware/src/timer.c"
                         },
                         {
-                            "sha256":  "9fa5e8b8e0ae531f090828fdeb1896458e61536474af0315c31c0ddb37f2eb8f",
+                            "sha256":  "29b896f706fc233eac564e6d2ff298aedb60282e2c96c1e620e24facb8eba7f5",
                             "path":  "Firmware/tools/config-probe.c"
                         },
                         {
@@ -92,7 +92,7 @@
                             "path":  "Firmware/tools/install-toolchain.ps1"
                         },
                         {
-                            "sha256":  "68a3dd7023641f3d3c166c5bc7a5202b4a98469b9b389b1fc0b1b89e340cf9a9",
+                            "sha256":  "198e2a020e07b2cccd902989f816d3fea91eb17d25241a344f20219e531b0a0f",
                             "path":  "Firmware/tools/package-submission.ps1"
                         }
                     ],
@@ -111,18 +111,24 @@
     "profile":  "Release",
     "effectiveConfiguration":  {
                                    "MCU_CONFIRMED":  1,
-                                   "SUPPLY_MV":  12000,
+                                   "L298_BRIDGE":  2,
+                                   "MOTOR_NOMINAL_RPM":  280,
+                                   "ENCODER_MODE":  4,
+                                   "ENCODER_LOGIC_MV":  5000,
+                                   "CLOCK_HZ":  8000000,
+                                   "PWM_HZ":  10000,
                                    "OUTPUTS":  1,
                                    "ENCODER_REVERSED":  0,
-                                   "DUTY_LIMIT":  1000,
-                                   "CLOCK_CONFIRMED":  1,
+                                   "SUPPLY_MV":  12000,
                                    "ENCODER_CPR":  0,
-                                   "CLOCK_HZ":  8000000,
-                                   "ENCODER_MODE":  4,
-                                   "PWM_HZ":  10000,
-                                   "RESET_TEST_CONFIRMED":  0
+                                   "CLOCK_CONFIRMED":  1,
+                                   "DUTY_LIMIT":  1000,
+                                   "GEAR_RATIO_NUMERATOR":  213,
+                                   "GEAR_RATIO_DENOMINATOR":  10,
+                                   "RESET_TEST_CONFIRMED":  0,
+                                   "ENCODER_PPR_REFERENCE":  11
                                },
-    "startedAtUtc":  "2026-11-11T10:03:08.5443466Z",
+    "startedAtUtc":  "2026-11-12T08:45:32.5362635Z",
     "compiler":  "avr-gcc.exe (GCC) 7.3.0",
     "sramLimit":  1024,
     "compileFlags":  [

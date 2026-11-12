@@ -16,9 +16,12 @@
 #endif
 #define CFG_CLOCK_SOURCE "8 MHz selected by user; oscillator source/fuses not read"
 #define CFG_FUSE_CONFIGURATION "UNCONFIRMED - DO NOT WRITE"
-#define CFG_DRIVER_MODEL "L298 bridge A: PB0=IN1, PB2=IN2, PB1=ENA"
-#define CFG_MOTOR_MODEL "DC 385 Hall encoder, seller code kde3852"
+#define CFG_DRIVER_MODEL "L298 bridge B: PB0=IN3, PB2=IN4, PB1=ENB; motor on OUT3/OUT4"
+#define CFG_L298_BRIDGE 2U
+#define CFG_MOTOR_MODEL "GA25-370 12V 280rpm; Duc Huy Shopee 1292561517/43151505475"
 #define CFG_MOTOR_SUPPLY_MV 12000UL
+/* Nameplate no-load output speed, NOT a feedback setpoint or a speed clamp. */
+#define CFG_MOTOR_NOMINAL_OUTPUT_RPM 280U
 #define CFG_LCD_CONTROLLER "ASSUMPTION: HD44780 compatible, parallel 4-bit"
 #ifndef CFG_HW_F_CPU_HZ
 #define CFG_HW_F_CPU_HZ 8000000UL
@@ -30,7 +33,7 @@
 #define CFG_DRIVER_CONFIRMED 1
 #endif
 #ifndef CFG_RESET_SAFETY_CONFIRMED
-/* Physical test status only. Fit ENA-to-GND 10k; remove module ENA jumper.
+/* Physical test status only. Fit ENB-to-GND 10k; remove module ENB jumper.
  * A compiler cannot confirm the external reset-disable circuit. */
 #define CFG_RESET_SAFETY_CONFIRMED 0
 #endif
@@ -54,7 +57,9 @@
 #define CFG_MOTOR_DUTY_LIMIT_PERMILLE 1000U
 #endif
 #ifndef CFG_ENCODER_PPR
-#define CFG_ENCODER_PPR 0UL
+/* Seller reference: 11 cycles per encoder/motor-shaft revolution.
+ * Not a measured output-shaft CPR and never substituted for calibration. */
+#define CFG_ENCODER_PPR 11UL
 #endif
 /* Counts per measured shaft revolution in the selected mode, after gearing.
  * Quadrature counts x4 edges; Hall mode counts rising edges x1. Calibrate each separately. */
@@ -80,9 +85,11 @@
 #error "Single-channel Hall cannot measure rotation direction"
 #endif
 #define CFG_ENCODER_DECODE_MULTIPLIER CFG_ENCODER_MODE
-#define CFG_ENCODER_LOGIC_MV 0U
-#define CFG_GEAR_RATIO_NUMERATOR 0UL
-#define CFG_GEAR_RATIO_DENOMINATOR 0UL
+#define CFG_ENCODER_LOGIC_MV 5000U
+/* Seller's nominal 21.3:1 gearbox for the selected 280 rpm variant.
+ * Reference only: the actual gear ratio/count convention must be calibrated. */
+#define CFG_GEAR_RATIO_NUMERATOR 213UL
+#define CFG_GEAR_RATIO_DENOMINATOR 10UL
 #ifndef CFG_REVERSAL_SAFETY_CONFIRMED
 #define CFG_REVERSAL_SAFETY_CONFIRMED 0
 #endif

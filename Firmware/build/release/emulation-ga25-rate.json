@@ -1,0 +1,22 @@
+{
+  "kind": "GA25-370 representative A/B x4 input rate during RUN/LCD/ADC; AVR model, not measured motor speed",
+  "folder": "Firmware\\build\\release",
+  "countedEdgesPerSecond": 4400,
+  "injectedEdges": 4400,
+  "countedEdges": 4400,
+  "invalidTransitions": 0,
+  "fault": 0,
+  "lcdRowsBeforeStop": [
+    "RUN F SET: 50.0 ",
+    "C:      4400 E:0"
+  ],
+  "appliedDutyAfterStop": 0,
+  "observedStackBytes": 188,
+  "status": "PASS",
+  "clockHz": 8000000,
+  "encoderMode": 4,
+  "countsPerRev": 0,
+  "elfSha256": "e6a28e7306459ff77175d9f40d7a1fdaf8c7a0ce44b869965a472bf478f55b8a",
+  "binarySha256": "06c8f057c7a84a462c3f701b2713a63fc94950bb3cab78c41b6a0c772a127cad",
+  "recordedAtUtc": "2026-11-12T08:45:41.254Z"
+}

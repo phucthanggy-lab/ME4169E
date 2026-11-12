@@ -54,7 +54,7 @@ if ($Profile -eq 'Release' -and (Test-Path -LiteralPath $hallManifestPath)) {
     $files[$hallRelative + '/manifest.json'] = (Get-FileHash -LiteralPath $hallManifestPath -Algorithm SHA256).Hash.ToLowerInvariant()
 }
 if (-not $WithoutInput) {
-    foreach ($name in @('ME4169E_Assignment.pdf','Schematic_Screenshot.png','Motor_KDE3852.md')) {
+    foreach ($name in @('ME4169E_Assignment.pdf','Schematic_Screenshot.png','Motor_GA25_370.md')) {
         $relative = 'Input/' + $name
         $files[$relative] = (Get-FileHash -LiteralPath (Join-Path $root $relative) -Algorithm SHA256).Hash.ToLowerInvariant()
     }
